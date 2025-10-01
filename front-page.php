@@ -224,6 +224,7 @@ get_header(); ?>
     font-family: var(--font-secondary);
     font-size: 1.2rem;
     line-height: 1.3;
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
