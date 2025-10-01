@@ -146,6 +146,7 @@ get_header(); ?>
                 <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
+                <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
                 <a href="<?php echo home_url('/contact'); ?>" class="active">Contact</a>
             </nav>
             <p>Get in touch with the Virginia Policy Review team</p>

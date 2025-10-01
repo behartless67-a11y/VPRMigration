@@ -147,6 +147,7 @@ get_header(); ?>
                 <a href="<?php echo home_url('/about-us'); ?>" class="active">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
+                <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
             </nav>
             <p>Student-run policy journal impacting wider policy dialogue since 2009</p>
         </div>
@@ -294,8 +295,6 @@ get_header(); ?>
     </script>
 
     <!-- Mission Section -->
-    <div style="height: 1px; background: var(--border-color); margin: 2rem 0;"></div>
-
     <section style="padding: var(--spacing-md) 0; background: var(--secondary-color);">
         <div class="container">
             <h2 class="text-center mb-lg">Our Mission</h2>
@@ -333,23 +332,6 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section style="padding: var(--spacing-lg) 0; background: var(--primary-color); color: white;">
-        <div class="container text-center">
-            <h2 style="color: white; margin-bottom: var(--spacing-md);">Join Our Mission</h2>
-            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
-                Interested in contributing to policy dialogue? We welcome submissions, new members, and collaboration opportunities.
-            </p>
-            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
-                <a href="<?php echo home_url('/submissions'); ?>" class="btn" style="background: var(--accent-color); color: white;">
-                    Submit Your Work
-                </a>
-                <a href="mailto:contact@virginiapolicyreview.org" class="btn" style="background: transparent; border: 2px solid white; color: white;">
-                    Contact Us
-                </a>
-            </div>
-        </div>
-    </section>
 </main>
 
 <?php get_footer(); ?>

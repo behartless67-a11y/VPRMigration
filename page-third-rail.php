@@ -146,6 +146,7 @@ get_header(); ?>
                 <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>" class="active">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
+                <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
             </nav>
             <p>Shorter takes on big issues - timely policy analysis and commentary</p>
         </div>

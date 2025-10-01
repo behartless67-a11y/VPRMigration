@@ -640,6 +640,7 @@ get_header(); ?>
                 <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
+                <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
             </nav>
             <p>Student perspectives on policy, research, and public affairs from the University of Virginia</p>
         </div>
