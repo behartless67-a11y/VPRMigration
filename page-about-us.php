@@ -12,6 +12,43 @@ get_header(); ?>
     display: none;
 }
 
+/* Ensure floating social is always visible */
+.floating-social {
+    display: flex !important;
+    position: fixed !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    z-index: 1000 !important;
+}
+
+.floating-social .social-float-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.floating-social .social-float-link:hover {
+    background: var(--accent-color) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(229, 114, 0, 0.4) !important;
+}
+
+.floating-social .social-float-link svg {
+    width: 22px !important;
+    height: 22px !important;
+}
+
 /* Reset main content padding */
 .main-content {
     padding: 0;
@@ -98,71 +135,166 @@ get_header(); ?>
 </style>
 
 <main class="main-content">
-
     <!-- Page Banner - Cornell Style -->
     <section class="page-banner">
         <div class="page-banner-content">
-            <h1>Virginia Policy Review</h1>
+            <h1 style="font-size: 6.5rem;">
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.1em;">Virginia</span>
+                <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
+            </h1>
             <nav class="page-nav">
                 <a href="<?php echo home_url('/'); ?>">Home</a>
                 <a href="<?php echo home_url('/about-us'); ?>" class="active">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
-                <a href="<?php echo home_url('/journal-issues'); ?>">Journal Issues</a>
-                <a href="<?php echo home_url('/contact'); ?>">Contact</a>
             </nav>
             <p>Student-run policy journal impacting wider policy dialogue since 2009</p>
         </div>
     </section>
 
-    <!-- Meet The Staff Section (moved to top) -->
-    <section style="padding: var(--spacing-lg) 0; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container">
-            <div class="text-center mb-lg">
-                <h2>Meet The Staff</h2>
-                <p style="font-size: 1.2rem; color: var(--text-secondary);">
-                    The dedicated team behind Virginia Policy Review
-                </p>
-            </div>
+    <!-- Meet The Staff Section - Slideshow -->
+    <section style="padding: 2rem 0 3rem; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 var(--spacing-md);">
+            <div style="font-family: var(--font-primary); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-color); margin-bottom: var(--spacing-md); text-align: center;">MEET THE STAFF</div>
 
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--spacing-lg); max-width: 1200px; margin: 0 auto;">
-                <!-- Sarah King - Executive Editor -->
-                <div style="display: grid; grid-template-columns: 200px 1fr; gap: var(--spacing-lg); align-items: start; background: var(--white); padding: var(--spacing-lg); border-radius: 16px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); border: 1px solid var(--border-color);">
-                    <div style="text-align: center;">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/sarah-king-executive-editor.jpg"
-                             alt="Sarah King, Executive Editor"
-                             style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--secondary-color); margin: 0 auto; display: block;">
-                        <h3 style="color: var(--primary-color); margin: var(--spacing-sm) 0 0.25rem 0; font-size: 1.5rem;">Sarah King</h3>
-                        <p style="color: var(--accent-color); font-weight: 600; font-size: 1rem; margin: 0; text-transform: uppercase; letter-spacing: 0.05em;">Executive Editor</p>
-                    </div>
-                    <div>
-                        <p style="color: var(--text-primary); line-height: 1.6; font-family: var(--font-secondary); margin: 0; font-size: 1.1rem;">
-                            Sarah is a second-year Master of Public Policy student interested in social welfare and public health policy. Prior to the Batten school, Sarah worked as a long-form news reporter and features editor before pivoting careers to the substance use treatment and recovery field. She now serves as a Course Assistant for the Batten School, is a Research Assistant with the Karsh Institute of Democracy and a 2025-2026 Tadler Fellow.
-                        </p>
-                    </div>
+            <!-- Staff Slideshow -->
+            <div style="position: relative; height: 550px;">
+                <div class="staff-slideshow">
+                    <!-- Slide 1: Sarah King -->
+                    <article class="staff-slide active" style="position: absolute; width: 100%; height: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; background: var(--white); padding: var(--spacing-xl); border-radius: 16px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); opacity: 1; transform: translateX(0); transition: opacity 0.6s ease, transform 0.6s ease;">
+                        <div style="text-align: center;">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/sarah-king-executive-editor.jpg"
+                                 alt="Sarah King, Executive Editor"
+                                 style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 4px solid var(--secondary-color); margin: 0 auto var(--spacing-md); display: block; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+                            <h3 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 0.5rem;">Sarah King</h3>
+                            <p style="color: var(--accent-color); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">Executive Editor</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--text-primary); line-height: 1.8; font-family: var(--font-secondary); font-size: 1.15rem;">
+                                Sarah is a second-year Master of Public Policy student interested in social welfare and public health policy. Prior to the Batten school, Sarah worked as a long-form news reporter and features editor before pivoting careers to the substance use treatment and recovery field. She now serves as a Course Assistant for the Batten School, is a Research Assistant with the Karsh Institute of Democracy and a 2025-2026 Tadler Fellow.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Slide 2: George Langhammer -->
+                    <article class="staff-slide" style="position: absolute; width: 100%; height: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; background: var(--white); padding: var(--spacing-xl); border-radius: 16px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateX(100%); transition: opacity 0.6s ease, transform 0.6s ease;">
+                        <div style="text-align: center;">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/george-langhammer-managing-editor.jpg"
+                                 alt="George Langhammer, Managing Editor"
+                                 style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 4px solid var(--secondary-color); margin: 0 auto var(--spacing-md); display: block; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);">
+                            <h3 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 0.5rem;">George Langhammer</h3>
+                            <p style="color: var(--accent-color); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">Managing Editor</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--text-primary); line-height: 1.8; font-family: var(--font-secondary); font-size: 1.15rem;">
+                                George is a second-year Master of Public Policy student from Roanoke, Virginia. He earned his Bachelor's degree in Foreign Affairs, with a minor in Spanish, from Hampden-Sydney College in May 2024. During his time at Hampden-Sydney, George was the punter on the football team, a three-term member of the honor court, and a senior editor for the college newspaper. Professionally, George spent his senior year working in government affairs, with a focus on healthcare and trade policy. Most recently, he completed an internship with the Office of the Attorney General of Virginia, where he contributed to homeland security and data privacy legislation. He is a 2025-26 Tadler Fellow.
+                            </p>
+                        </div>
+                    </article>
                 </div>
 
-                <!-- George Langhammer - Managing Editor -->
-                <div style="display: grid; grid-template-columns: 200px 1fr; gap: var(--spacing-lg); align-items: start; background: var(--white); padding: var(--spacing-lg); border-radius: 16px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); border: 1px solid var(--border-color);">
-                    <div style="text-align: center;">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/george-langhammer-managing-editor.jpg"
-                             alt="George Langhammer, Managing Editor"
-                             style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--secondary-color); margin: 0 auto; display: block;">
-                        <h3 style="color: var(--primary-color); margin: var(--spacing-sm) 0 0.25rem 0; font-size: 1.5rem;">George Langhammer</h3>
-                        <p style="color: var(--accent-color); font-weight: 600; font-size: 1rem; margin: 0; text-transform: uppercase; letter-spacing: 0.05em;">Managing Editor</p>
-                    </div>
-                    <div>
-                        <p style="color: var(--text-primary); line-height: 1.6; font-family: var(--font-secondary); margin: 0; font-size: 1.1rem;">
-                            George is a second-year Master of Public Policy student from Roanoke, Virginia. He earned his Bachelor's degree in Foreign Affairs, with a minor in Spanish, from Hampden-Sydney College in May 2024. During his time at Hampden-Sydney, George was the punter on the football team, a three-term member of the honor court, and a senior editor for the college newspaper. Professionally, George spent his senior year working in government affairs, with a focus on healthcare and trade policy. Most recently, he completed an internship with the Office of the Attorney General of Virginia, where he contributed to homeland security and data privacy legislation. He is a 2025-26 Tadler Fellow.
-                        </p>
-                    </div>
+                <!-- Navigation Arrows -->
+                <button class="staff-nav-btn staff-prev" style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%); background: var(--white); border: 2px solid var(--primary-color); color: var(--primary-color); width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: all 0.3s ease; z-index: 10; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);" onmouseover="this.style.background='var(--primary-color)'; this.style.color='white';" onmouseout="this.style.background='var(--white)'; this.style.color='var(--primary-color)';">
+                    ‹
+                </button>
+                <button class="staff-nav-btn staff-next" style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%); background: var(--white); border: 2px solid var(--primary-color); color: var(--primary-color); width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: all 0.3s ease; z-index: 10; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);" onmouseover="this.style.background='var(--primary-color)'; this.style.color='white';" onmouseout="this.style.background='var(--white)'; this.style.color='var(--primary-color)';">
+                    ›
+                </button>
+
+                <!-- Slide Indicators -->
+                <div style="position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 10;">
+                    <button class="staff-dot active" data-slide="0" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--primary-color); background: var(--primary-color); cursor: pointer; transition: all 0.3s ease; padding: 0;"></button>
+                    <button class="staff-dot" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--primary-color); background: transparent; cursor: pointer; transition: all 0.3s ease; padding: 0;"></button>
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+    // Staff slideshow functionality
+    (function() {
+        let currentStaffSlide = 0;
+        let staffAutoplayInterval;
+        const staffAutoplayDelay = 5000; // 5 seconds
+
+        const staffSlides = document.querySelectorAll('.staff-slide');
+        const staffDots = document.querySelectorAll('.staff-dot');
+        const staffPrevBtn = document.querySelector('.staff-prev');
+        const staffNextBtn = document.querySelector('.staff-next');
+        const staffSlideshow = document.querySelector('.staff-slideshow');
+
+        function showStaffSlide(n) {
+            // Hide all slides
+            staffSlides.forEach((slide, index) => {
+                slide.style.opacity = '0';
+                slide.style.transform = index < n ? 'translateX(-100%)' : 'translateX(100%)';
+                slide.classList.remove('active');
+            });
+
+            // Update dots
+            staffDots.forEach(dot => {
+                dot.style.background = 'transparent';
+                dot.classList.remove('active');
+            });
+
+            // Show current slide
+            currentStaffSlide = (n + staffSlides.length) % staffSlides.length;
+            staffSlides[currentStaffSlide].style.opacity = '1';
+            staffSlides[currentStaffSlide].style.transform = 'translateX(0)';
+            staffSlides[currentStaffSlide].classList.add('active');
+            staffDots[currentStaffSlide].style.background = 'var(--primary-color)';
+            staffDots[currentStaffSlide].classList.add('active');
+        }
+
+        function nextStaffSlide() {
+            showStaffSlide(currentStaffSlide + 1);
+        }
+
+        function prevStaffSlide() {
+            showStaffSlide(currentStaffSlide - 1);
+        }
+
+        function startStaffAutoplay() {
+            staffAutoplayInterval = setInterval(nextStaffSlide, staffAutoplayDelay);
+        }
+
+        function stopStaffAutoplay() {
+            clearInterval(staffAutoplayInterval);
+        }
+
+        // Navigation buttons
+        staffPrevBtn.addEventListener('click', () => {
+            prevStaffSlide();
+            stopStaffAutoplay();
+            startStaffAutoplay();
+        });
+
+        staffNextBtn.addEventListener('click', () => {
+            nextStaffSlide();
+            stopStaffAutoplay();
+            startStaffAutoplay();
+        });
+
+        // Dot indicators
+        staffDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showStaffSlide(index);
+                stopStaffAutoplay();
+                startStaffAutoplay();
+            });
+        });
+
+        // Pause on hover
+        staffSlideshow.addEventListener('mouseenter', stopStaffAutoplay);
+        staffSlideshow.addEventListener('mouseleave', startStaffAutoplay);
+
+        // Start autoplay
+        startStaffAutoplay();
+    })();
+    </script>
+
     <!-- Mission Section -->
-    <div class="section-divider"></div>
+    <div style="height: 1px; background: var(--border-color); margin: 2rem 0;"></div>
 
     <section style="padding: var(--spacing-md) 0; background: var(--secondary-color);">
         <div class="container">
@@ -179,9 +311,9 @@ get_header(); ?>
     </section>
 
     <!-- Legal & University Information -->
-    <section style="padding: var(--spacing-md) 0;">
+    <section style="padding: var(--spacing-md) 0; background: linear-gradient(rgba(232, 119, 34, 0.65), rgba(232, 119, 34, 0.65)), url('<?php echo get_template_directory_uri(); ?>/images/hoo_with_a_view_jc_header_3-2.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container">
-            <div class="hero-card" style="background: var(--secondary-color); border: none;">
+            <div class="hero-card" style="background: rgba(255, 255, 255, 0.95); border: none;">
                 <h2>University Affiliation & Policies</h2>
 
                 <div style="margin-bottom: var(--spacing-md);">
