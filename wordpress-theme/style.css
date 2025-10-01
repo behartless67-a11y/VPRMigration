@@ -140,60 +140,82 @@ p {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: var(--spacing-md) 0;
-    gap: var(--spacing-md);
+}
+
+.site-branding {
+    display: none;
 }
 
 .site-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
-    flex-shrink: 0;
+    display: none;
 }
 
 .main-nav {
-    flex: 1;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .main-nav ul {
     display: flex;
     list-style: none;
-    gap: 0.5rem;
+    gap: 3rem;
     align-items: center;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    width: 100%;
 }
 
 .main-nav li {
-    flex-shrink: 0;
+    flex: 0 0 auto;
 }
 
 .main-nav a {
-    color: white;
-    background: var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
     text-decoration: none;
+    font-family: var(--font-secondary);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     letter-spacing: 0.01em;
     transition: var(--transition);
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--border-radius);
+    padding: 0.5rem 0;
     display: inline-block;
     white-space: nowrap;
-    min-width: 110px;
     text-align: center;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
 .main-nav a:hover {
-    background: var(--accent-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: var(--accent-color);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.main-nav .current-menu-item a,
+.main-nav .current_page_item a {
+    color: var(--accent-color);
+}
+
+.main-nav .current-menu-item a::after,
+.main-nav .current_page_item a::after {
+    width: 100%;
 }
 
 /* Hero Section */

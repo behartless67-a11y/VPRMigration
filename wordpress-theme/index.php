@@ -25,19 +25,24 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="hero-card" style="padding: var(--spacing-xl); min-width: 450px;">
-                        <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md);">Current Theme</h3>
-                        <h2 style="color: var(--accent-color); margin-bottom: var(--spacing-md); font-size: 2rem;">
-                            "Policy for the Public Good"
-                        </h2>
-                        <p style="margin-bottom: var(--spacing-md); font-size: 1.2rem;">2025-26 Edition</p>
+                    <div class="hero-card" style="padding: var(--spacing-lg); min-width: 450px; text-align: center;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md); color: var(--primary-color);">Current Issue</h3>
 
-                        <div style="border-top: 1px solid var(--border-color); padding-top: var(--spacing-md);">
-                            <h4 style="margin-bottom: var(--spacing-sm); font-size: 1.2rem;">Latest Journal</h4>
-                            <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
-                                Volume XVI →
-                            </a>
-                        </div>
+                        <!-- Journal Cover Image -->
+                        <a href="<?php echo get_template_directory_uri(); ?>/images/vprjournalvolume_xvi.pdf" target="_blank" style="display: block; margin-bottom: var(--spacing-md);">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/currentissue.png"
+                                 alt="VPR Journal Volume XVI - Policy for the Public Good"
+                                 style="width: 100%; max-width: 300px; height: auto; border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease;"
+                                 onmouseover="this.style.transform='scale(1.05)'"
+                                 onmouseout="this.style.transform='scale(1)'">
+                        </a>
+
+                        <h4 style="font-size: 1.3rem; margin-bottom: var(--spacing-sm); color: var(--primary-color);">Volume XVI</h4>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: var(--spacing-md);">"Policy for the Public Good"</p>
+
+                        <a href="<?php echo get_template_directory_uri(); ?>/images/vprjournalvolume_xvi.pdf" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem; display: inline-block;">
+                            Download Current Issue →
+                        </a>
                     </div>
                 </div>
             </div>

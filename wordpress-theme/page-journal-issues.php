@@ -6,12 +6,12 @@
 get_header(); ?>
 
 <main class="main-content">
-    <!-- Compact Header -->
-    <section style="padding: var(--spacing-lg) 0; background: var(--white);">
+    <!-- Hero Header with Background -->
+    <section class="hero" style="min-height: 35vh; padding-top: 100px; padding-bottom: var(--spacing-lg);">
         <div class="container">
             <div class="text-center">
-                <h1 style="font-size: 2.5rem; margin-bottom: var(--spacing-sm); font-family: var(--font-secondary);">Journal Issues</h1>
-                <p style="font-size: 1.1rem; color: var(--text-secondary); margin: 0;">Current and archived publications of the Virginia Policy Review</p>
+                <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: var(--spacing-sm); font-family: var(--font-secondary); color: var(--primary-color);">Journal Issues</h1>
+                <p style="font-size: 1.3rem; color: var(--text-primary); max-width: 800px; margin: 0 auto; font-family: var(--font-secondary);">Current and archived publications of the Virginia Policy Review</p>
             </div>
         </div>
     </section>
