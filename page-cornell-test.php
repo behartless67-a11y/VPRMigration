@@ -19,7 +19,7 @@ get_header(); ?>
 
 /* Combined Header + Featured Section - Cornell Style */
 .cornell-banner {
-    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
                 url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg');
     background-size: cover;
     background-position: center;
@@ -31,32 +31,34 @@ get_header(); ?>
 .cornell-banner-content {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 0 2rem 1.5rem;
+    padding: 0 2rem 1rem;
     text-align: center;
 }
 
 .cornell-banner h1 {
     font-family: var(--font-secondary);
-    font-size: 5.5rem;
+    font-size: 5rem;
     color: var(--primary-color);
     font-weight: 800;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    line-height: 1;
 }
 
 .cornell-nav {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    margin-bottom: 0.8rem;
+    gap: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .cornell-nav a {
     font-family: var(--font-secondary);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .cornell-nav a:hover {
@@ -79,20 +81,21 @@ get_header(); ?>
 }
 
 .cornell-banner p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-secondary);
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
+    line-height: 1.3;
 }
 
 /* Featured Section - Cornell Style */
 .featured-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
                 url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 1.5rem 0 3rem;
+    padding: 1rem 0 3rem;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -126,6 +129,7 @@ get_header(); ?>
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .featured-article-image img {
@@ -418,7 +422,8 @@ get_header(); ?>
             <div class="featured-main">
                 <div class="featured-article">
                     <div class="featured-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Featured Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/sudan.jpg" alt="Featured Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="featured-article-meta">
                         <span class="category-tag">International</span>
