@@ -194,15 +194,35 @@ get_header(); ?>
 .featured-sidebar .sidebar-article {
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    gap: 1rem;
 }
 
 .featured-sidebar .sidebar-article:first-child {
     padding-top: 0;
 }
 
+.sidebar-article-thumbnail {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.sidebar-article-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-article-content {
+    flex: 1;
+}
+
 .featured-sidebar .sidebar-article h3 {
     font-family: var(--font-secondary);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.3;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -216,6 +236,13 @@ get_header(); ?>
 
 .featured-sidebar .sidebar-article h3 a:hover {
     color: var(--accent-color);
+}
+
+.sidebar-article-excerpt {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
 }
 
 /* 4-Column Article Grid - Cornell Style */
@@ -438,27 +465,45 @@ get_header(); ?>
 
                 <div class="featured-sidebar">
                     <div class="sidebar-article">
-                        <div class="article-meta">
-                            <span class="category-tag">International</span>
-                            <time class="article-date-text">Feb 26, 2025</time>
+                        <div class="sidebar-article-thumbnail">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/bashar-syria.jpg" alt="Syria">
                         </div>
-                        <h3><a href="#">Replacing Bashar with HTS: A False Sense of Safety for Israel</a></h3>
+                        <div class="sidebar-article-content">
+                            <div class="article-meta">
+                                <span class="category-tag">International</span>
+                                <time class="article-date-text">Feb 26, 2025</time>
+                            </div>
+                            <h3><a href="#">Replacing Bashar with HTS: A False Sense of Safety for Israel</a></h3>
+                            <p class="sidebar-article-excerpt">As Syria's political landscape shifts with HTS gaining power, Israel faces new security challenges that may prove more complex than the Assad regime.</p>
+                        </div>
                     </div>
 
                     <div class="sidebar-article">
-                        <div class="article-meta">
-                            <span class="category-tag">Security</span>
-                            <time class="article-date-text">Feb 19, 2025</time>
+                        <div class="sidebar-article-thumbnail">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/undersea-cable.jpg" alt="Infrastructure">
                         </div>
-                        <h3><a href="#">Protecting Critical Undersea Cable Infrastructure</a></h3>
+                        <div class="sidebar-article-content">
+                            <div class="article-meta">
+                                <span class="category-tag">Security</span>
+                                <time class="article-date-text">Feb 19, 2025</time>
+                            </div>
+                            <h3><a href="#">Protecting Critical Undersea Cable Infrastructure</a></h3>
+                            <p class="sidebar-article-excerpt">Global internet and telecommunications rely on vulnerable undersea cables. New policy frameworks aim to safeguard this critical infrastructure from emerging threats.</p>
+                        </div>
                     </div>
 
                     <div class="sidebar-article">
-                        <div class="article-meta">
-                            <span class="category-tag">Urban Policy</span>
-                            <time class="article-date-text">Feb 12, 2025</time>
+                        <div class="sidebar-article-thumbnail">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/kansas-transit.jpg" alt="Public Transit">
                         </div>
-                        <h3><a href="#">Public Transportation Access in Kansas City</a></h3>
+                        <div class="sidebar-article-content">
+                            <div class="article-meta">
+                                <span class="category-tag">Urban Policy</span>
+                                <time class="article-date-text">Feb 12, 2025</time>
+                            </div>
+                            <h3><a href="#">Public Transportation Access in Kansas City</a></h3>
+                            <p class="sidebar-article-excerpt">Kansas City's transit system faces accessibility challenges. New proposals could transform public transportation for underserved communities across the metro area.</p>
+                        </div>
                     </div>
                 </div>
             </div>
