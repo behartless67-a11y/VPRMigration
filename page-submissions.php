@@ -163,7 +163,7 @@ get_header(); ?>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
                 <a href="<?php echo home_url('/submissions'); ?>" class="active">Submissions</a>
             </nav>
-            <p>Submit your policy research and analysis</p>
+            <p>Submission Guidelines</p>
         </div>
     </section>
 
@@ -173,9 +173,7 @@ get_header(); ?>
 
             <!-- Content -->
             <div style="background: var(--white); border-radius: 8px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
-                <h2 style="font-family: var(--font-secondary); font-size: 2.2rem; color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">Submission Guidelines</h2>
-
-                <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem; text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
                     <strong>Thank you for your interest in Virginia Policy Review! Submissions for the 2025-2026 Journal will open soon!</strong>
                 </p>
 
@@ -207,13 +205,13 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div style="background: var(--accent-color); color: white; border-radius: 8px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+                <div style="background: var(--accent-color); color: white; border-radius: 8px; padding: 1rem 1.5rem; margin-bottom: 1.5rem;">
                     <p style="font-size: 1.2rem; margin: 0;">
                         <strong>2025-2026 theme: "Policy for the Public Good."</strong>
                     </p>
                 </div>
 
-                <div style="text-align: center;">
+                <div>
                     <p style="font-size: 1rem; color: var(--text-secondary); margin: 0;">
                         For more information, email Executive Editor Sarah King and Managing Editor George Langhammer.
                     </p>
