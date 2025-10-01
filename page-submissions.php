@@ -168,8 +168,9 @@ get_header(); ?>
     </section>
 
     <!-- Submissions Content -->
-    <section style="padding: var(--spacing-lg) 0; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container" style="max-width: 1200px;">
+    <section style="padding: 2rem 0 3rem; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container" style="max-width: 1400px;">
+            <div style="font-family: var(--font-primary); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-color); margin-bottom: var(--spacing-md); text-align: center;">SUBMISSION GUIDELINES</div>
 
             <!-- Content -->
             <div style="background: var(--white); border-radius: 8px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
