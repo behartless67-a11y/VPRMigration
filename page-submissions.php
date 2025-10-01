@@ -171,63 +171,53 @@ get_header(); ?>
     <section style="padding: var(--spacing-lg) 0; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container" style="max-width: 1200px;">
 
-            <!-- Intro Box -->
-            <div style="background: var(--white); border-radius: 8px; padding: var(--spacing-xl); margin-bottom: var(--spacing-lg); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); text-align: center;">
-                <h2 style="font-family: var(--font-secondary); font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">Submission Guidelines</h2>
-                <p style="font-size: 1.2rem; color: var(--accent-color); font-weight: 600; margin-bottom: var(--spacing-md);">
-                    Thank you for your interest in Virginia Policy Review! Submissions for the 2025-2026 Journal will open soon!
-                </p>
-            </div>
+            <!-- Content -->
+            <div style="background: var(--white); border-radius: 8px; padding: var(--spacing-xl); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                <h2 style="font-family: var(--font-secondary); font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-lg); text-align: center;">Submission Guidelines</h2>
 
-            <!-- Research Article -->
-            <div class="submission-box">
-                <h3>Research Article</h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                    These articles are typically longer and reflect some kind of research in a particular policy area of interest. This can include an empirical analysis of a government program or a case study of some kind. These articles can take a position, make recommendations, or suggest specific improvements to a particular program or policy. Length may vary, but they must be <strong>no longer than 7000 words</strong>. Please also include an abstract no longer than 250 words and a short biography on each author no longer than 100 words.
+                <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--spacing-lg); text-align: center;">
+                    <strong>Thank you for your interest in Virginia Policy Review! Submissions for the 2025-2026 Journal will open soon!</strong>
                 </p>
-            </div>
 
-            <!-- Commentary/Op-ed -->
-            <div class="submission-box">
-                <h3>Commentary/Op-ed</h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                    These entries are generally shorter and are intended to reflect different perspectives on a particular issue. These articles should take a position on a particular topic and must be <strong>no longer than 2,000 words</strong>. Please include a short biography no longer than 100 words on each author.
-                </p>
-            </div>
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+                        <strong>Research Article:</strong> These articles are typically longer and reflect some kind of research in a particular policy area of interest. This can include an empirical analysis of a government program or a case study of some kind. These articles can take a position, make recommendations, or suggest specific improvements to a particular program or policy. Length may vary, but they must be no longer than 7000 words. Please also include an abstract no longer than 250 words and a short biography on each author no longer than 100 words.
+                    </p>
+                </div>
 
-            <!-- Citations -->
-            <div class="submission-box">
-                <h3>Citations</h3>
-                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
-                    All citations must follow the <strong>APA or Chicago Citation Style</strong>.
-                </p>
-            </div>
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+                        <strong>Commentary/Op-ed</strong>: These entries are generally shorter and are intended to reflect different perspectives on a particular issue. These articles should take a position on a particular topic and must be no longer than 2,000 words. Please include a short biography no longer than 100 words on each author.
+                    </p>
+                </div>
 
-            <!-- Style -->
-            <div class="submission-box">
-                <h3>Style</h3>
-                <ul style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); padding-left: var(--spacing-lg);">
-                    <li>Use <strong>Times New Roman</strong> font in <strong>12pt</strong>.</li>
-                    <li><strong>Double-space</strong> your submission.</li>
-                </ul>
-            </div>
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+                        <strong>Citations</strong>: All citations must follow the <strong>APA or Chicago Citation Style</strong>.
+                    </p>
+                </div>
 
-            <!-- Theme -->
-            <div style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: white; border-radius: 8px; padding: var(--spacing-xl); margin-bottom: var(--spacing-lg); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); text-align: center;">
-                <h3 style="color: white; margin-bottom: var(--spacing-md); font-size: 2rem;">2025-2026 Theme</h3>
-                <p style="font-size: 1.5rem; font-weight: 600; margin: 0;">
-                    "Policy for the Public Good"
-                </p>
-            </div>
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        <strong>Style:</strong>
+                    </p>
+                    <ul style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-left: var(--spacing-lg);">
+                        <li>Use Times New Roman font in 12pt.</li>
+                        <li>Double-space your submission.</li>
+                    </ul>
+                </div>
 
-            <!-- Contact -->
-            <div style="background: var(--white); border-radius: 8px; padding: var(--spacing-xl); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); text-align: center;">
-                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: var(--spacing-md);">
-                    For more information, email <strong>Executive Editor Sarah King</strong> and <strong>Managing Editor George Langhammer</strong>.
-                </p>
-                <a href="mailto:contact@virginiapolicyreview.org" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 2rem;">
-                    Contact Us
-                </a>
+                <div style="background: var(--accent-color); color: white; border-radius: 8px; padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); text-align: center;">
+                    <p style="font-size: 1.4rem; margin: 0;">
+                        <strong>2025-2026 theme: "Policy for the Public Good."</strong>
+                    </p>
+                </div>
+
+                <div style="text-align: center;">
+                    <p style="font-size: 1.05rem; color: var(--text-secondary);">
+                        For more information, email Executive Editor Sarah King and Managing Editor George Langhammer.
+                    </p>
+                </div>
             </div>
 
         </div>
