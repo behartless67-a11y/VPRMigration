@@ -7,6 +7,11 @@
 get_header(); ?>
 
 <style>
+/* Hide default header */
+.site-header {
+    display: none;
+}
+
 /* Reset main content padding */
 .main-content {
     padding: 0;
@@ -20,7 +25,7 @@ get_header(); ?>
     background-position: center;
     background-attachment: fixed;
     padding: 4rem 0 0;
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .cornell-banner-content {
@@ -35,7 +40,42 @@ get_header(); ?>
     font-size: 5.5rem;
     color: var(--primary-color);
     font-weight: 800;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cornell-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+.cornell-nav a {
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.cornell-nav a:hover {
+    color: var(--accent-color);
+}
+
+.cornell-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.cornell-nav a:hover::after {
+    width: 100%;
 }
 
 .cornell-banner p {
@@ -283,6 +323,23 @@ get_header(); ?>
     gap: 0.6rem;
 }
 
+/* Image Attribution */
+.image-attribution {
+    font-size: 0.65rem;
+    color: #999;
+    padding: 0.3rem 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.grid-article-image {
+    position: relative;
+}
+
 /* Load More */
 .load-more-section {
     text-align: center;
@@ -341,6 +398,14 @@ get_header(); ?>
     <section class="cornell-banner">
         <div class="cornell-banner-content">
             <h1>Virginia Policy Review</h1>
+            <nav class="cornell-nav">
+                <a href="<?php echo home_url('/'); ?>">Home</a>
+                <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
+                <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
+                <a href="<?php echo home_url('/academical'); ?>">Academical</a>
+                <a href="<?php echo home_url('/journal-issues'); ?>">Journal Issues</a>
+                <a href="<?php echo home_url('/contact'); ?>">Contact</a>
+            </nav>
             <p>Student perspectives on policy, research, and public affairs from the University of Virginia</p>
         </div>
     </section>
@@ -403,7 +468,8 @@ get_header(); ?>
             <div class="articles-grid-4">
                 <article class="grid-article-card">
                     <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/syria.jpg" alt="Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="grid-article-content">
                         <div class="article-meta">
@@ -417,7 +483,8 @@ get_header(); ?>
 
                 <article class="grid-article-card">
                     <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/healthcare.jpg" alt="Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="grid-article-content">
                         <div class="article-meta">
@@ -431,7 +498,8 @@ get_header(); ?>
 
                 <article class="grid-article-card">
                     <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/agriculture.jpg" alt="Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="grid-article-content">
                         <div class="article-meta">
@@ -445,7 +513,8 @@ get_header(); ?>
 
                 <article class="grid-article-card">
                     <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/cybersecurity.jpg" alt="Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="grid-article-content">
                         <div class="article-meta">
@@ -459,7 +528,8 @@ get_header(); ?>
 
                 <article class="grid-article-card">
                     <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/education.jpg" alt="Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="grid-article-content">
                         <div class="article-meta">
@@ -473,7 +543,8 @@ get_header(); ?>
 
                 <article class="grid-article-card">
                     <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/economics.jpg" alt="Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="grid-article-content">
                         <div class="article-meta">
@@ -487,7 +558,8 @@ get_header(); ?>
 
                 <article class="grid-article-card">
                     <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/ai.jpg" alt="Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="grid-article-content">
                         <div class="article-meta">
@@ -501,7 +573,8 @@ get_header(); ?>
 
                 <article class="grid-article-card">
                     <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="Article">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/justice.jpg" alt="Article">
+                        <div class="image-attribution">Photo by Unsplash</div>
                     </div>
                     <div class="grid-article-content">
                         <div class="article-meta">
