@@ -116,7 +116,7 @@ get_header(); ?>
     </section>
 
     <!-- Meet The Staff Section (moved to top) -->
-    <section style="padding: var(--spacing-lg) 0;">
+    <section style="padding: var(--spacing-lg) 0; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container">
             <div class="text-center mb-lg">
                 <h2>Meet The Staff</h2>
