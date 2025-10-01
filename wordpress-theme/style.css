@@ -45,9 +45,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-primary);
-    background:
-        linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
-        url('./images/lawn.jpg') center/cover no-repeat fixed;
+    background: var(--white);
     overflow-x: hidden;
 }
 
@@ -105,7 +103,7 @@ p {
 
 .section-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    background: var(--border-color);
     margin: var(--spacing-xl) 0;
     position: relative;
 }
@@ -118,7 +116,7 @@ p {
     transform: translateX(-50%);
     width: 60px;
     height: 5px;
-    background: linear-gradient(90deg, var(--accent-color), #004499);
+    background: var(--accent-color);
     border-radius: 3px;
 }
 
@@ -197,7 +195,8 @@ p {
     align-items: center;
     padding-top: 80px;
     padding-bottom: var(--spacing-xl);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 248, 0.9) 100%);
+    background: rgba(255, 255, 255, 0.85) url('./images/lawn.jpg') center/cover no-repeat;
+    background-blend-mode: lighten;
     position: relative;
     overflow: hidden;
 }
@@ -220,10 +219,7 @@ p {
     font-weight: 700;
     line-height: 0.9;
     margin-bottom: var(--spacing-md);
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary-color);
     letter-spacing: -0.02em;
 }
 
@@ -263,7 +259,7 @@ p {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    background: var(--accent-color);
 }
 
 /* CTA Buttons */
@@ -298,7 +294,7 @@ p {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: rgba(255, 255, 255, 0.2);
     transition: left 0.5s ease;
 }
 
@@ -369,7 +365,7 @@ p {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 102, 204, 0.03), transparent);
+    background: rgba(0, 102, 204, 0.03);
     transition: left 0.6s ease;
 }
 
@@ -439,7 +435,7 @@ p {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent-color), #004499);
+    background: var(--accent-color);
     transition: width 0.3s ease;
 }
 

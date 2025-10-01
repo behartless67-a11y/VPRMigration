@@ -105,10 +105,10 @@ get_header(); ?>
     </section>
 
     <!-- Call to Action -->
-    <section style="padding: var(--spacing-lg) 0; background: linear-gradient(135deg, var(--primary-color) 0%, #333333 100%); color: white;">
+    <section style="padding: var(--spacing-lg) 0; background: var(--primary-color); color: white;">
         <div class="container text-center">
             <h2 style="color: white; margin-bottom: var(--spacing-md);">Join Our Mission</h2>
-            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
                 Interested in contributing to policy dialogue? We welcome submissions, new members, and collaboration opportunities.
             </p>
             <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">

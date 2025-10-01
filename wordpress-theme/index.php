@@ -13,28 +13,28 @@ get_header(); ?>
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">Virginia Policy Review</h1>
-                    <p class="hero-subtitle">Policy for the Public Good</p>
-                    <p class="hero-description">
+                    <p class="hero-subtitle" style="font-size: 2rem; margin-bottom: var(--spacing-lg);">Policy for the Public Good</p>
+                    <p class="hero-description" style="font-size: 1.4rem; line-height: 1.8; margin-bottom: var(--spacing-lg);">
                         Student-run policy journal impacting wider policy dialogue through research,
                         opinion pieces, interviews, and our podcast. Curating meaningful insights
                         on modern policy issues since 2009.
                     </p>
                     <div class="hero-cta">
-                        <a href="#featured" class="btn btn-primary">Latest Articles</a>
-                        <a href="<?php echo home_url('/about-us'); ?>" class="btn btn-secondary">About Us</a>
+                        <a href="#featured" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Latest Articles</a>
+                        <a href="<?php echo home_url('/about-us'); ?>" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2rem;">About Us</a>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="hero-card">
-                        <h3>Current Theme</h3>
-                        <h2 style="color: var(--accent-color); margin-bottom: var(--spacing-sm);">
+                    <div class="hero-card" style="padding: var(--spacing-xl); min-width: 450px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md);">Current Theme</h3>
+                        <h2 style="color: var(--accent-color); margin-bottom: var(--spacing-md); font-size: 2rem;">
                             "Policy for the Public Good"
                         </h2>
-                        <p style="margin-bottom: var(--spacing-md);">2025-26 Edition</p>
+                        <p style="margin-bottom: var(--spacing-md); font-size: 1.2rem;">2025-26 Edition</p>
 
                         <div style="border-top: 1px solid var(--border-color); padding-top: var(--spacing-md);">
-                            <h4 style="margin-bottom: var(--spacing-sm); font-size: 1rem;">Latest Journal</h4>
-                            <a href="#" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
+                            <h4 style="margin-bottom: var(--spacing-sm); font-size: 1.2rem;">Latest Journal</h4>
+                            <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
                                 Volume XVI →
                             </a>
                         </div>
@@ -48,8 +48,8 @@ get_header(); ?>
     <section id="featured" class="section">
         <div class="container">
             <div class="text-center mb-lg">
-                <h2>Featured Articles</h2>
-                <p style="font-size: 1.2rem; color: var(--text-secondary);">
+                <h2 style="font-size: 3rem; margin-bottom: var(--spacing-md);">Featured Articles</h2>
+                <p style="font-size: 1.5rem; color: var(--text-secondary); margin-bottom: var(--spacing-lg);">
                     The latest insights from The Third Rail
                 </p>
             </div>
@@ -61,13 +61,13 @@ get_header(); ?>
                         <span class="featured-card-category">International</span>
                         <time class="featured-card-date">March 5, 2025</time>
                     </div>
-                    <h3>Unpacking Famine in Sudan</h3>
-                    <p>
+                    <h3 style="font-size: 1.8rem; margin-bottom: var(--spacing-md);">Unpacking Famine in Sudan</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7;">
                         Famine was confirmed in Zamzam, a camp in Sudan's North Darfur region
                         housing half a million displaced people. Understanding the crisis requires
                         examining how war exacerbates humanitarian disasters.
                     </p>
-                    <a href="#" class="read-more">Read Full Article →</a>
+                    <a href="#" class="read-more" style="font-size: 1.1rem;">Read Full Article →</a>
                 </article>
 
                 <!-- Article 2 -->
@@ -76,13 +76,13 @@ get_header(); ?>
                         <span class="featured-card-category">International</span>
                         <time class="featured-card-date">February 26, 2025</time>
                     </div>
-                    <h3>Replacing Bashar with HTS: A False Sense of Safety for Israel</h3>
-                    <p>
+                    <h3 style="font-size: 1.8rem; margin-bottom: var(--spacing-md);">Replacing Bashar with HTS: A False Sense of Safety for Israel</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7;">
                         While Syria's situation highlights Iran's eroding foothold, Israel now
                         faces the challenge of an unpredictable HTS-led Syrian government after
                         Assad's fall.
                     </p>
-                    <a href="#" class="read-more">Read Full Article →</a>
+                    <a href="#" class="read-more" style="font-size: 1.1rem;">Read Full Article →</a>
                 </article>
 
                 <!-- Article 3 -->
@@ -91,13 +91,13 @@ get_header(); ?>
                         <span class="featured-card-category">Security</span>
                         <time class="featured-card-date">February 19, 2025</time>
                     </div>
-                    <h3>Undersea Cable Infrastructure Challenges</h3>
-                    <p>
+                    <h3 style="font-size: 1.8rem; margin-bottom: var(--spacing-md);">Undersea Cable Infrastructure Challenges</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7;">
                         Protecting the global network of undersea cables is vital to U.S. national
                         security. Every day, $10 trillion in financial transactions and 99% of
                         internet traffic flows through these cables.
                     </p>
-                    <a href="#" class="read-more">Read Full Article →</a>
+                    <a href="#" class="read-more" style="font-size: 1.1rem;">Read Full Article →</a>
                 </article>
 
                 <!-- Article 4 -->
@@ -106,13 +106,13 @@ get_header(); ?>
                         <span class="featured-card-category">Urban</span>
                         <time class="featured-card-date">February 12, 2025</time>
                     </div>
-                    <h3>Public Transportation & Employment Access in Kansas City</h3>
-                    <p>
+                    <h3 style="font-size: 1.8rem; margin-bottom: var(--spacing-md);">Public Transportation & Employment Access in Kansas City</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7;">
                         Low-income households in Kansas City face unreliable access to employment
                         areas. 28 million Americans depend on public transit, yet many routes
                         exclude those who need them most.
                     </p>
-                    <a href="#" class="read-more">Read Full Article →</a>
+                    <a href="#" class="read-more" style="font-size: 1.1rem;">Read Full Article →</a>
                 </article>
 
                 <!-- Article 5 -->
@@ -121,30 +121,30 @@ get_header(); ?>
                         <span class="featured-card-category">International</span>
                         <time class="featured-card-date">January 23, 2025</time>
                     </div>
-                    <h3>Syria Without Assad: What Russia Stands to Lose</h3>
-                    <p>
+                    <h3 style="font-size: 1.8rem; margin-bottom: var(--spacing-md);">Syria Without Assad: What Russia Stands to Lose</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7;">
                         Assad's asylum in Moscow marks a turning point, leaving Russia grappling
                         with diminished influence in a post-Assad, HTS-led Syria amid the
                         prioritized Ukraine conflict.
                     </p>
-                    <a href="#" class="read-more">Read Full Article →</a>
+                    <a href="#" class="read-more" style="font-size: 1.1rem;">Read Full Article →</a>
                 </article>
 
                 <!-- Call to Action Card -->
-                <article class="featured-card" style="background: linear-gradient(135deg, var(--accent-color), #004499); color: white; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-                    <h3 style="color: white; margin-bottom: var(--spacing-md);">Join Our Publication</h3>
-                    <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-md);">
+                <article class="featured-card" style="background: var(--accent-color); color: white; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                    <h3 style="color: white; font-size: 1.8rem; margin-bottom: var(--spacing-md);">Join Our Publication</h3>
+                    <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; line-height: 1.7; margin-bottom: var(--spacing-md);">
                         Interested in contributing to policy dialogue? Submit your research,
                         opinion pieces, or join our editorial team.
                     </p>
-                    <a href="mailto:contact@virginiapolicyreview.org" class="btn" style="background: white; color: var(--accent-color); align-self: center;">
+                    <a href="mailto:contact@virginiapolicyreview.org" class="btn" style="background: white; color: var(--accent-color); align-self: center; font-size: 1.1rem; padding: 1rem 2rem;">
                         Get Involved →
                     </a>
                 </article>
             </div>
 
             <div class="text-center mt-lg">
-                <a href="<?php echo home_url('/the-third-rail'); ?>" class="btn btn-secondary">
+                <a href="<?php echo home_url('/the-third-rail'); ?>" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2rem;">
                     View All Articles
                 </a>
             </div>
@@ -156,40 +156,40 @@ get_header(); ?>
         <div class="container">
             <div class="hero-content">
                 <div>
-                    <h2>About Virginia Policy Review</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: var(--spacing-md);">
+                    <h2 style="font-size: 3rem; margin-bottom: var(--spacing-md);">About Virginia Policy Review</h2>
+                    <p style="font-size: 1.4rem; line-height: 1.7; margin-bottom: var(--spacing-md);">
                         Founded in 2009, we're a student-run policy journal striving to publish
                         work that impacts wider policy dialogue through research, opinion pieces,
                         interviews, and our podcast.
                     </p>
-                    <p>
+                    <p style="font-size: 1.2rem; line-height: 1.7;">
                         We publish a physical journal each Spring, maintain our blog "The Third Rail"
                         for ongoing insights, and produce "Academical," our official podcast from
                         the heart of Jefferson's Academical Village.
                     </p>
-                    <a href="<?php echo home_url('/about-us'); ?>" class="btn btn-primary" style="margin-top: var(--spacing-md);">
+                    <a href="<?php echo home_url('/about-us'); ?>" class="btn btn-primary" style="margin-top: var(--spacing-md); font-size: 1.1rem; padding: 1rem 2rem;">
                         Learn More About Us
                     </a>
                 </div>
                 <div>
-                    <div class="hero-card">
-                        <h3>Our Mission</h3>
+                    <div class="hero-card" style="padding: var(--spacing-xl); min-width: 450px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md);">Our Mission</h3>
                         <div style="margin: var(--spacing-md) 0;">
-                            <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
-                                <div style="width: 8px; height: 8px; background: var(--accent-color); border-radius: 50%;"></div>
-                                <span>Research & Analysis</span>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                                <div style="width: 10px; height: 10px; background: var(--accent-color); border-radius: 50%;"></div>
+                                <span style="font-size: 1.15rem;">Research & Analysis</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
-                                <div style="width: 8px; height: 8px; background: var(--accent-color); border-radius: 50%;"></div>
-                                <span>Opinion Pieces</span>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                                <div style="width: 10px; height: 10px; background: var(--accent-color); border-radius: 50%;"></div>
+                                <span style="font-size: 1.15rem;">Opinion Pieces</span>
                             </div>
-                            <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
-                                <div style="width: 8px; height: 8px; background: var(--accent-color); border-radius: 50%;"></div>
-                                <span>Interviews & Podcasts</span>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                                <div style="width: 10px; height: 10px; background: var(--accent-color); border-radius: 50%;"></div>
+                                <span style="font-size: 1.15rem;">Interviews & Podcasts</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
-                                <div style="width: 8px; height: 8px; background: var(--accent-color); border-radius: 50%;"></div>
-                                <span>Policy Dialogue</span>
+                                <div style="width: 10px; height: 10px; background: var(--accent-color); border-radius: 50%;"></div>
+                                <span style="font-size: 1.15rem;">Policy Dialogue</span>
                             </div>
                         </div>
                     </div>
