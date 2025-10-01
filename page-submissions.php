@@ -163,7 +163,6 @@ get_header(); ?>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
                 <a href="<?php echo home_url('/submissions'); ?>" class="active">Submissions</a>
             </nav>
-            <p>Submission Guidelines</p>
         </div>
     </section>
 
