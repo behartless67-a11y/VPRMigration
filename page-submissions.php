@@ -172,49 +172,49 @@ get_header(); ?>
         <div class="container" style="max-width: 1200px;">
 
             <!-- Content -->
-            <div style="background: var(--white); border-radius: 8px; padding: var(--spacing-xl); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
-                <h2 style="font-family: var(--font-secondary); font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-lg); text-align: center;">Submission Guidelines</h2>
+            <div style="background: var(--white); border-radius: 8px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                <h2 style="font-family: var(--font-secondary); font-size: 2.2rem; color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">Submission Guidelines</h2>
 
-                <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--spacing-lg); text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem; text-align: center;">
                     <strong>Thank you for your interest in Virginia Policy Review! Submissions for the 2025-2026 Journal will open soon!</strong>
                 </p>
 
-                <div style="margin-bottom: var(--spacing-lg);">
-                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+                <div style="margin-bottom: 1.25rem;">
+                    <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin: 0;">
                         <strong>Research Article:</strong> These articles are typically longer and reflect some kind of research in a particular policy area of interest. This can include an empirical analysis of a government program or a case study of some kind. These articles can take a position, make recommendations, or suggest specific improvements to a particular program or policy. Length may vary, but they must be no longer than 7000 words. Please also include an abstract no longer than 250 words and a short biography on each author no longer than 100 words.
                     </p>
                 </div>
 
-                <div style="margin-bottom: var(--spacing-lg);">
-                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
-                        <strong>Commentary/Op-ed</strong>: These entries are generally shorter and are intended to reflect different perspectives on a particular issue. These articles should take a position on a particular topic and must be no longer than 2,000 words. Please include a short biography no longer than 100 words on each author.
+                <div style="margin-bottom: 1.25rem;">
+                    <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin: 0;">
+                        <strong>Commentary/Op-ed:</strong> These entries are generally shorter and are intended to reflect different perspectives on a particular issue. These articles should take a position on a particular topic and must be no longer than 2,000 words. Please include a short biography no longer than 100 words on each author.
                     </p>
                 </div>
 
-                <div style="margin-bottom: var(--spacing-lg);">
-                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
-                        <strong>Citations</strong>: All citations must follow the <strong>APA or Chicago Citation Style</strong>.
+                <div style="margin-bottom: 1.25rem;">
+                    <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin: 0;">
+                        <strong>Citations:</strong> All citations must follow the <strong>APA or Chicago Citation Style</strong>.
                     </p>
                 </div>
 
-                <div style="margin-bottom: var(--spacing-lg);">
-                    <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                <div style="margin-bottom: 1.5rem;">
+                    <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin: 0 0 0.5rem 0;">
                         <strong>Style:</strong>
                     </p>
-                    <ul style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-left: var(--spacing-lg);">
+                    <ul style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin: 0 0 0 1.5rem; padding: 0;">
                         <li>Use Times New Roman font in 12pt.</li>
                         <li>Double-space your submission.</li>
                     </ul>
                 </div>
 
-                <div style="background: var(--accent-color); color: white; border-radius: 8px; padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); text-align: center;">
-                    <p style="font-size: 1.4rem; margin: 0;">
+                <div style="background: var(--accent-color); color: white; border-radius: 8px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+                    <p style="font-size: 1.2rem; margin: 0;">
                         <strong>2025-2026 theme: "Policy for the Public Good."</strong>
                     </p>
                 </div>
 
                 <div style="text-align: center;">
-                    <p style="font-size: 1.05rem; color: var(--text-secondary);">
+                    <p style="font-size: 1rem; color: var(--text-secondary); margin: 0;">
                         For more information, email Executive Editor Sarah King and Managing Editor George Langhammer.
                     </p>
                 </div>
