@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Contact Page
  * Template for Contact page
  */
 
