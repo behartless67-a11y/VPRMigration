@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone:*)",
+      "Bash(node:*)",
+      "Bash(npx --yes http-server -p 8080 -o)",
+      "Bash(dir:*)",
+      "Read(//c/xampp/**)",
+      "Bash(npx:*)",
+      "Bash(curl:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(xcopy:*)",
+      "Bash(/c/xampp/apache_start.bat)",
+      "Bash(/c/xampp/mysql_start.bat)",
+      "Bash(/c/xampp/mysql/bin/mysql:*)",
+      "Bash(xargs:*)",
+      "Read(//c/Users/bh4hb/OneDrive - University of Virginia/Desktop//**)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nMajor design updates and functionality improvements\n\n## Navigation Redesign\n- Removed button-style navigation, replaced with elegant text-only links\n- Used serif font (Crimson Text) to match hero typography\n- Added animated orange underline on hover\n- Implemented active page highlighting\n- 3rem spacing for clean, professional layout\n\n## Page Layout Improvements\n- Reduced hero height on all subpages (60vh → 35vh)\n- Decreased padding and margins for less vertical white space\n- Widened content areas for better readability\n- Consistent lawn background across all pages\n\n## The Third Rail Blog Page\n- Redesigned from card grid to full-width article list\n- Articles now show 2-3 paragraphs for better preview\n- Increased content width (900px → 1100px)\n- Added client-side category filtering (no page reload)\n- Created 5 WordPress blog posts with proper permalinks\n- All \"Continue reading\" links now functional\n\n## Homepage Updates\n- Replaced text-based current issue section with actual journal cover image\n- Added currentissue.png display with hover scale effect\n- Linked cover image and download button to vprjournalvolume_xvi.pdf\n- Professional shadow and styling on journal cover\n\n## Database & Content\n- Created 5 blog posts for Third Rail articles with dates and content\n- Created Contact page with full template\n- Set up WordPress pages for all navigation items\n- Configured navigation menu in WordPress\n\n## Files Added\n- currentissue.png (journal cover)\n- vprjournalvolume_xvi.pdf (full journal)\n- page-contact.php (new template)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(nslookup:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
