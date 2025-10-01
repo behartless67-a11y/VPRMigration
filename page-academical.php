@@ -115,91 +115,48 @@ get_header(); ?>
     </section>
 
     <!-- Recent Episodes -->
-    <section class="section" style="padding: var(--spacing-md) 0; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: var(--spacing-md);">Recent Episodes</h2>
+    <section class="section" style="padding: var(--spacing-lg) 0; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container" style="max-width: 1400px;">
+            <h2 style="text-align: center; margin-bottom: var(--spacing-lg); font-family: var(--font-secondary); font-size: 2.5rem; color: var(--primary-color);">Recent Episodes</h2>
 
-            <div style="display: grid; gap: var(--spacing-sm); margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
                 <!-- Episode 1: Professor Daniel Player -->
-                <article class="featured-card" style="border-left: 6px solid var(--accent-color); padding: var(--spacing-md) var(--spacing-lg);">
-                    <div style="display: grid; grid-template-columns: 1fr auto; gap: var(--spacing-lg); align-items: start;">
-                        <div>
-                            <div class="featured-card-meta" style="margin-bottom: var(--spacing-md);">
-                                <span class="featured-card-category" style="background: var(--primary-color); color: var(--accent-color); padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 600;">Education Policy</span>
-                                <time class="featured-card-date" style="margin-left: var(--spacing-md);">April 16, 2022</time>
-                            </div>
-                            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md);">Professor Daniel Player, University of Virginia</h3>
-                            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: var(--spacing-lg);">
-                                Join us as we explore public-private partnerships in education policy with Professor Daniel Player
-                                from UVA's School of Education and Human Development. We discuss innovative approaches to policy
-                                creation, the role of research in shaping educational outcomes, and how academic institutions
-                                can better collaborate with government agencies.
-                            </p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: var(--spacing-md); min-width: 180px;">
-                            <div style="background: #f8f9fa; padding: var(--spacing-md); border-radius: var(--border-radius);">
-                                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Duration:</strong></p>
-                                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0;">45 mins</p>
-                            </div>
-                            <a href="https://anchor.fm/academical-vpr" target="_blank" style="background: var(--primary-color); color: var(--accent-color); padding: 1rem 1.5rem; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; text-align: center; transition: var(--transition); display: block;">
-                                🎧 Listen Now
-                            </a>
-                        </div>
+                <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
+                    <div style="margin-bottom: var(--spacing-sm);">
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Education Policy</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem; margin-left: var(--spacing-sm);">• April 16, 2022</span>
                     </div>
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.6rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Professor Daniel Player, University of Virginia</h3>
+                    <p style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Join us as we explore public-private partnerships in education policy with Professor Daniel Player from UVA's School of Education and Human Development. We discuss innovative approaches to policy creation, the role of research in shaping educational outcomes, and how academic institutions can better collaborate with government agencies.
+                    </p>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem;">🎧 Listen Now →</a>
                 </article>
 
                 <!-- Episode 2: Ellie Kaufman -->
-                <article class="featured-card" style="border-left: 6px solid var(--primary-color); padding: var(--spacing-xl);">
-                    <div style="display: grid; grid-template-columns: 1fr auto; gap: var(--spacing-lg); align-items: start;">
-                        <div>
-                            <div class="featured-card-meta" style="margin-bottom: var(--spacing-md);">
-                                <span class="featured-card-category" style="background: var(--primary-color); color: var(--accent-color); padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 600;">National Security</span>
-                                <time class="featured-card-date" style="margin-left: var(--spacing-md);">March 19, 2022</time>
-                            </div>
-                            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md);">Ellie Kaufman, CNN Producer</h3>
-                            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: var(--spacing-lg);">
-                                CNN Producer Ellie Kaufman shares insights from the front lines of national security reporting.
-                                We discuss the challenges of covering complex policy issues, the importance of accurate journalism
-                                in policy debates, and career paths for aspiring policy journalists and communications professionals.
-                            </p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: var(--spacing-md); min-width: 180px;">
-                            <div style="background: #f8f9fa; padding: var(--spacing-md); border-radius: var(--border-radius);">
-                                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Duration:</strong></p>
-                                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0;">38 mins</p>
-                            </div>
-                            <a href="https://anchor.fm/academical-vpr" target="_blank" style="background: var(--primary-color); color: var(--accent-color); padding: 1rem 1.5rem; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; text-align: center; transition: var(--transition); display: block;">
-                                🎧 Listen Now
-                            </a>
-                        </div>
+                <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
+                    <div style="margin-bottom: var(--spacing-sm);">
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">National Security</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem; margin-left: var(--spacing-sm);">• March 19, 2022</span>
                     </div>
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.6rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Ellie Kaufman, CNN Producer</h3>
+                    <p style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        CNN Producer Ellie Kaufman shares insights from the front lines of national security reporting. We discuss the challenges of covering complex policy issues, the importance of accurate journalism in policy debates, and career paths for aspiring policy journalists and communications professionals.
+                    </p>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem;">🎧 Listen Now →</a>
                 </article>
 
                 <!-- Episode 3: Dr. Sarah Mitchell -->
-                <article class="featured-card" style="border-left: 6px solid var(--text-secondary); padding: var(--spacing-xl);">
-                    <div style="display: grid; grid-template-columns: 1fr auto; gap: var(--spacing-lg); align-items: start;">
-                        <div>
-                            <div class="featured-card-meta" style="margin-bottom: var(--spacing-md);">
-                                <span class="featured-card-category" style="background: var(--primary-color); color: var(--accent-color); padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 600;">Environmental Policy</span>
-                                <time class="featured-card-date" style="margin-left: var(--spacing-md);">February 25, 2022</time>
-                            </div>
-                            <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md);">Dr. Sarah Mitchell, Environmental Policy Institute</h3>
-                            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: var(--spacing-lg);">
-                                Environmental policy expert Dr. Sarah Mitchell discusses climate change legislation,
-                                renewable energy initiatives, and the intersection of economic policy and environmental
-                                sustainability. A must-listen for understanding today's green policy landscape.
-                            </p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: var(--spacing-md); min-width: 180px;">
-                            <div style="background: #f8f9fa; padding: var(--spacing-md); border-radius: var(--border-radius);">
-                                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Duration:</strong></p>
-                                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0;">42 mins</p>
-                            </div>
-                            <a href="https://anchor.fm/academical-vpr" target="_blank" style="background: var(--primary-color); color: var(--accent-color); padding: 1rem 1.5rem; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; text-align: center; transition: var(--transition); display: block;">
-                                🎧 Listen Now
-                            </a>
-                        </div>
+                <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
+                    <div style="margin-bottom: var(--spacing-sm);">
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Environmental Policy</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem; margin-left: var(--spacing-sm);">• February 25, 2022</span>
                     </div>
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.6rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Dr. Sarah Mitchell, Environmental Policy Institute</h3>
+                    <p style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Environmental policy expert Dr. Sarah Mitchell discusses climate change legislation, renewable energy initiatives, and the intersection of economic policy and environmental sustainability. A must-listen for understanding today's green policy landscape.
+                    </p>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem;">🎧 Listen Now →</a>
                 </article>
             </div>
 
