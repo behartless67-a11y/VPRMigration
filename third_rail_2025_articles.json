@@ -1,0 +1,119 @@
+{
+  "extraction_report": {
+    "date_attempted": "2025-09-26",
+    "target_archives": [
+      "http://www.virginiapolicyreview.org/the-third-rail/2025/3",
+      "http://www.virginiapolicyreview.org/the-third-rail/2025/2",
+      "http://www.virginiapolicyreview.org/the-third-rail/2025/1"
+    ],
+    "status": "UNABLE_TO_ACCESS",
+    "issues_encountered": [
+      {
+        "issue": "SSL/Connection Failures",
+        "description": "All attempts to directly access virginiapolicyreview.org resulted in SSL handshake failures",
+        "error": "EPROTO SSL routines:ssl3_read_bytes:sslv3 alert handshake failure"
+      },
+      {
+        "issue": "Website Under Construction",
+        "description": "Search results indicated the Virginia Policy Review website is currently under construction",
+        "impact": "Limited access to current content and archive pages"
+      },
+      {
+        "issue": "No 2025 Content Found",
+        "description": "Comprehensive web searches found no articles from The Third Rail blog dated 2025",
+        "searches_performed": [
+          "site:virginiapolicyreview.org \"The Third Rail\" 2025 January February March",
+          "\"Virginia Policy Review\" \"Third Rail\" recent articles 2024 2025",
+          "\"virginiapolicyreview.org/the-third-rail/2025\" cache: OR site:web.archive.org"
+        ]
+      }
+    ]
+  },
+  "available_articles_found": [
+    {
+      "title": "Think of the Children",
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/think-of-the-children",
+      "status": "Found in search results",
+      "estimated_date": "Unknown - not accessible for full extraction"
+    },
+    {
+      "title": "The intern aristocracy",
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/the-intern-aristocracy",
+      "author": "Kyle Schoenbelen",
+      "status": "Found in search results",
+      "estimated_date": "Unknown - not accessible for full extraction"
+    },
+    {
+      "title": "The Case for Closing Virginia's Last Juvenile Detention Center",
+      "url": "https://www.virginiapolicyreview.org/the-third-rail/the-case-for-closing-virginias-last-juvenile-detention-center",
+      "status": "Found in search results",
+      "estimated_date": "Unknown - not accessible for full extraction"
+    },
+    {
+      "title": "Police Officer Psychological Evaluations: A High Hurdle or a Flawed Formality?",
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/police-officer-psychological-evaluations-a-high-hurdle-or-a-flawed-formality",
+      "status": "Found in search results",
+      "estimated_date": "Unknown - not accessible for full extraction"
+    },
+    {
+      "title": "Trump's Terrorists: Parallels to Islamic Extremism",
+      "url": "https://www.virginiapolicyreview.org/the-third-rail/trumps-terrorists-parallels-to-islamic-extremism",
+      "status": "Found in search results",
+      "estimated_date": "Unknown - not accessible for full extraction"
+    },
+    {
+      "title": "To target gender pay gap, address underlying structures",
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/to-target-gender-pay-gap-address-underlying-structures",
+      "author": "Samir Salifou",
+      "status": "Found in search results",
+      "estimated_date": "Unknown - not accessible for full extraction"
+    },
+    {
+      "title": "Gritty educations",
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/gritty-educations",
+      "status": "Found in search results",
+      "estimated_date": "Unknown - not accessible for full extraction"
+    }
+  ],
+  "blog_information": {
+    "name": "The Third Rail",
+    "parent_organization": "Virginia Policy Review",
+    "description": "A blog focusing on policy issues in Virginia, the United States, and the world",
+    "contributors": "Master's students, academics, and professionals",
+    "current_theme": "Policy for the Public Good (2025-26 academic year)",
+    "main_url": "https://www.virginiapolicyreview.org/the-third-rail",
+    "categories_found": [
+      "Law",
+      "Education Policy",
+      "Criminal Justice",
+      "Gender Policy",
+      "Political Analysis"
+    ]
+  },
+  "recommendations": [
+    {
+      "recommendation": "Wait for Website Completion",
+      "description": "The Virginia Policy Review website is under construction. Wait for completion before attempting extraction."
+    },
+    {
+      "recommendation": "Direct Contact",
+      "description": "Contact Virginia Policy Review directly via email to request access to 2025 articles or ask about their publication schedule."
+    },
+    {
+      "recommendation": "Alternative Access Methods",
+      "description": "Consider using institutional access through university libraries or contacting the publication directly for archives."
+    },
+    {
+      "recommendation": "Archive Verification",
+      "description": "Verify if 2025 articles exist yet, as the dates requested (January-March 2025) may be future content that hasn't been published."
+    }
+  ],
+  "total_2025_articles_extracted": 0,
+  "extraction_successful": false,
+  "next_steps": [
+    "Contact Virginia Policy Review directly for access to current content",
+    "Monitor website for completion of construction",
+    "Verify publication schedule and availability of 2025 content",
+    "Consider alternative extraction methods once website is accessible"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "extraction_summary": {
+    "extraction_date": "2025-09-26",
+    "status": "Partial extraction - SSL errors prevented full content access",
+    "method_attempted": "Direct URL fetch, Google cache, web search for excerpts",
+    "issue": "Virginia Policy Review website experiencing SSL handshake failures",
+    "articles_confirmed": 5,
+    "articles_fully_extracted": 0
+  },
+  "articles": [
+    {
+      "title": "The intern aristocracy",
+      "author": "Kyle Schoenbelen",
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/the-intern-aristocracy",
+      "section": "The Third Rail",
+      "publication": "Virginia Policy Review",
+      "extraction_status": "Partial",
+      "content_fragments": {
+        "opening": "Cleaning my apartment the other day, I came across a mug buried under the couch... The mug is emblazoned with the logo—and heady if not pretentious motto—of my employer",
+        "theme": "Appears to discuss workplace culture and employer branding"
+      },
+      "author_info": {
+        "current_position": "Senior Vice President at SKDK (per LinkedIn)",
+        "education": "Frank Batten School of Leadership and Public Policy, University of Virginia",
+        "linkedin": "https://www.linkedin.com/in/kyle-schnoebelen-72b84298/",
+        "note": "Author name spelling varies: 'Schoenbelen' in article vs 'Schnoebelen' on LinkedIn"
+      },
+      "policy_area": "Likely workplace policy/internship programs",
+      "full_content": null,
+      "publication_date": null,
+      "citations": null
+    },
+    {
+      "title": "Think of the Children",
+      "author": null,
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/think-of-the-children",
+      "section": "The Third Rail",
+      "publication": "Virginia Policy Review",
+      "extraction_status": "URL confirmed, no content extracted",
+      "content_fragments": null,
+      "author_info": null,
+      "policy_area": "Unknown - title suggests child welfare/policy",
+      "full_content": null,
+      "publication_date": null,
+      "citations": null
+    },
+    {
+      "title": "The Case for Closing Virginia's Last Juvenile Detention Center",
+      "author": null,
+      "url": "https://www.virginiapolicyreview.org/the-third-rail/the-case-for-closing-virginias-last-juvenile-detention-center",
+      "section": "The Third Rail",
+      "publication": "Virginia Policy Review",
+      "extraction_status": "URL confirmed, no content extracted",
+      "content_fragments": null,
+      "author_info": null,
+      "policy_area": "Juvenile justice reform",
+      "context": {
+        "related_legislation": "SB 1432 (Marsden) requires closure and consolidation of seven juvenile detention centers by January 1, 2026",
+        "current_system": "Virginia DJJ operates 30 court service units and one juvenile correctional center"
+      },
+      "full_content": null,
+      "publication_date": null,
+      "citations": null
+    },
+    {
+      "title": "Police Officer Psychological Evaluations: A High Hurdle or a Flawed Formality?",
+      "author": null,
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/police-officer-psychological-evaluations-a-high-hurdle-or-a-flawed-formality",
+      "section": "The Third Rail",
+      "publication": "Virginia Policy Review",
+      "extraction_status": "Partial",
+      "content_fragments": {
+        "opening": "The pre-employment requirement of psychological evaluations may seem like a formidable blockade to prevent the wrong people from becoming police officers, but as it stands, there are currently many..."
+      },
+      "author_info": null,
+      "policy_area": "Law enforcement policy/police reform",
+      "full_content": null,
+      "publication_date": null,
+      "citations": null
+    },
+    {
+      "title": "To target gender pay gap, address underlying structures",
+      "author": "Samir Salifou",
+      "url": "http://www.virginiapolicyreview.org/the-third-rail/to-target-gender-pay-gap-address-underlying-structures",
+      "section": "The Third Rail",
+      "publication": "Virginia Policy Review",
+      "extraction_status": "Partial",
+      "content_fragments": {
+        "opening": "The notion that equality of opportunity undergirds political and economic success lies at the core of American meritocracy"
+      },
+      "author_info": null,
+      "policy_area": "Gender equality/economic policy",
+      "full_content": null,
+      "publication_date": null,
+      "citations": null
+    }
+  ],
+  "recommendations": {
+    "next_steps": [
+      "Contact Virginia Policy Review directly to request article content",
+      "Try accessing during different times when SSL issues may be resolved",
+      "Check if articles are available in academic databases",
+      "Look for author contact information to request copies",
+      "Monitor website status for technical resolution"
+    ],
+    "alternative_sources": [
+      "University of Virginia library archives",
+      "Academic databases with policy journal content",
+      "Author personal websites or portfolios",
+      "Social media posts by authors referencing their work"
+    ]
+  },
+  "technical_details": {
+    "ssl_error": "SSL routines:ssl3_read_bytes:sslv3 alert handshake failure",
+    "website_status": "Inaccessible due to SSL configuration issues",
+    "last_attempt": "2025-09-26"
+  }
+}

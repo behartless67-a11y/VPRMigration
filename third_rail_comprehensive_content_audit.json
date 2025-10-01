@@ -1,0 +1,47 @@
+{
+  "virginia_policy_review_third_rail_blog_audit": {
+    "extraction_date": "2025-09-25",
+    "base_url": "http://www.virginiapolicyreview.org/the-third-rail",
+    "blog_tagline": "Shorter takes on big issues.",
+    "organization": {
+      "name": "Virginia Policy Review",
+      "address": "235 McCormick Rd., Charlottesville, VA 22904",
+      "school_affiliation": "The Frank Batten School of Leadership and Public Policy, University of Virginia"
+    },
+    "categories": [
+      "All", "Domestic", "Economics", "Education", "Electoral Politics",
+      "Environment", "Gun Rights", "Health", "International", "Justice",
+      "Law", "Politics", "Social", "Urban"
+    ],
+    "archive_periods": {
+      "total_months": 40,
+      "date_range": "February 2014 to March 2025",
+      "coverage_years": 11
+    },
+    "articles": [
+      {
+        "title": "Unpacking Famine in Sudan",
+        "date": "3/5/2025",
+        "author": {
+          "name": "Sanny Yang",
+          "bio": "Sanny is a second-year Master of Public Policy candidate from South Korea. She grew up in Lilongwe, Malawi, and attended high school in Kijabe, Kenya before coming to the United States to pursue higher education. She graduated from Hope College in Holland, MI in 2022 with a B.A. in Political Science and Global Studies. Her primary policy areas of interest are global development and humanitarian policy. Currently, she works for the Humanitarian Collaborative at UVA, a Center dedicated to bringing together scholars, practitioners, students, and partners to address development and humanitarian challenges around the world. She is also collaborating with the World Food Programme for her capstone, providing policy recommendations to strengthen the program sustainability of home-grown school feeding in Ethiopia."
+        },
+        "category": "International",
+        "keywords": ["Sudan", "famine", "humanitarian crisis", "IPC classification", "UN", "civil war", "aid"],
+        "word_count_estimate": 850,
+        "full_content": "In July 2024, famine was confirmed in Zamzam, a camp in Sudan's North Darfur region that houses half a million people displaced from the ongoing civil war. The war that broke out last April between the Sudanese Armed Forces (SAF) and its rival paramilitary Rapid Support Forces (RSF) sparked a hunger crisis with some 25 million people, about half of the Sudanese population, facing acute hunger. International experts used set criteria to confirm famine in Zamzam and added that there is a high risk that these conditions will continue beyond October if the conflict persists. To comprehend why experts are concerned about the spread of famine in Sudan, it's important to understand how rare famine is, how it is determined, who officially declares it, and how war exacerbates it.\n\nIt's rare to meet the technical requirements of famine, yet Zamzam has surpassed the thresholds, making the Sudanese hunger crisis one of the most serious in decades. The United Nations (UN) defines famine using the Integrated Food Security Phase Classification (IPC), a five-phase scale mechanism that analyzes data and concludes whether famine is happening in an area. Famine is the highest phase of the IPC scale. It is classified when an area has 20% of households facing an extreme food shortage, 30% of children are acutely malnourished, and two or four deaths occur for every 10,000 per day by starvation or malnutrition-related disease. In the last 15 years, famine was confirmed in just two other countries: Somalia in 2011 and South Sudan in 2017 and 2020. For context, 39 countries and territories were reported to face IPC Phase 4 conditions in April 2024. At Zamzam, famine was classified with reasonable evidence, indicating that clear evidence shows two of the three thresholds have been reached, and analysts reasonably assess that the third threshold has likely also been reached based on broader evidence.\n\nAlthough the IPC report found it plausible that famine is ongoing in Sudan and the international community has urged the government to officially declare it, the Sudanese government has not done so. In the report, the nutrition and mortality thresholds were expected to meet or exceed the threshold for famine conditions in Zamzam with reasonable evidence that these conditions will persist through October. The report itself does not constitute an official declaration of famine as the UN defers to functioning governments to issue that declaration. This approach is intended to respect the sovereignty of the state. As for Sudan, the UN says it's the responsibility of the internationally recognized Sudanese government, the SAF, to make the declaration. Nevertheless, the Sudanese government has denied the existence of famine, claiming the reports are \"not true.\" According to BBC News, Sudan's ambassador to the UN dismissed claims of starvation and famine. Reuters suggests this may be because an official declaration could lead to an international intervention in the conflict.\n\nExacerbating the hunger crisis, parties often impede the flow of humanitarian aid to their rival's territory. In Sudan, both sides have been accused of blocking aid trucks from reaching those starving in Darfur. In August, Doctors Without Borders said the RSF held their trucks carrying food and supplies for children in Zamzam for weeks. The SAF has also blocked UN trucks from bringing food into Darfur through the main border crossing from Chad, allegedly to stop weapons smuggling to RSF. According to Alex de Waal, a prominent Sudan expert, the army's strategy of cutting off supplies from rebel-held areas in hopes that their rival's supporters will grow dissatisfied and defect from the units is a tried-and-true tactic they used when fighting the war in southern Sudan from 1983 to 2005.\n\nLooking ahead, the UN has warned that over two million Sudanese could die from starvation this fall. Even when the military temporarily reopened the border crossing in August after a six-month closure, aid only started to arrive slowly. Experts suggest the army is leveraging control over aid checkpoints for strategic advantage, delaying the processing of necessary paperwork to resume shipments. International experts say a formal declaration of famine could draw global attention and make a difference for the millions of Sudanese on the brink of starvation by boosting funding for aid organizations and mobilizing a humanitarian response.",
+        "url": "http://www.virginiapolicyreview.org/the-third-rail/unpacking-famine-in-sudan",
+        "comments": 0,
+        "archive_month": "March 2025"
+      }
+    ],
+    "archive_month_details": [
+      {
+        "month": "March 2025",
+        "articles_count": 1,
+        "url": "http://www.virginiapolicyreview.org/the-third-rail/2025/3",
+        "status": "crawled"
+      }
+    ]
+  }
+}
