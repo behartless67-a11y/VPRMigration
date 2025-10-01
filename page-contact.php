@@ -5,22 +5,117 @@
 
 get_header(); ?>
 
+<style>
+/* Hide default header */
+.site-header {
+    display: none;
+}
+
+/* Reset main content padding */
+.main-content {
+    padding: 0;
+}
+
+/* Header Banner - Cornell Style */
+.page-banner {
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 4rem 0 2rem;
+    margin-top: 0;
+}
+
+.page-banner-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-family: var(--font-secondary);
+    font-size: 5rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    line-height: 1;
+}
+
+.page-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-nav a {
+    font-family: var(--font-secondary);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.page-nav a:hover {
+    color: var(--accent-color);
+}
+
+.page-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.page-nav a:hover::after {
+    width: 100%;
+}
+
+.page-nav a.active {
+    color: var(--accent-color);
+}
+
+.page-nav a.active::after {
+    width: 100%;
+}
+
+.page-banner p {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.3;
+}
+</style>
+
 <main class="main-content">
 
-    <!-- Hero Header with Background -->
-    <section class="hero" style="min-height: 35vh; padding-top: 100px; padding-bottom: var(--spacing-lg);">
-        <div class="container">
-            <div class="text-center">
-                <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: var(--spacing-sm); font-family: var(--font-secondary); color: var(--primary-color);">Contact Us</h1>
-                <p style="font-size: 1.3rem; color: var(--text-primary); max-width: 800px; margin: 0 auto; font-family: var(--font-secondary);">
-                    Get in touch with the Virginia Policy Review team
-                </p>
-            </div>
+    <!-- Page Banner - Cornell Style -->
+    <section class="page-banner">
+        <div class="page-banner-content">
+            <h1>Virginia Policy Review</h1>
+            <nav class="page-nav">
+                <a href="<?php echo home_url('/'); ?>">Home</a>
+                <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
+                <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
+                <a href="<?php echo home_url('/academical'); ?>">Academical</a>
+                <a href="<?php echo home_url('/journal-issues'); ?>">Journal Issues</a>
+                <a href="<?php echo home_url('/contact'); ?>" class="active">Contact</a>
+            </nav>
+            <p>Get in touch with the Virginia Policy Review team</p>
         </div>
     </section>
 
     <!-- Contact Information -->
-    <section style="padding: var(--spacing-lg) 0;">
+    <section style="padding: var(--spacing-lg) 0; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); max-width: 1000px; margin: 0 auto;">
 
