@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Journal Issues Page
  * Template for Journal Issues page
  */
 

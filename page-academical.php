@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Academical Podcast Page
  * Template for Academical Podcast page
  * Based on http://www.virginiapolicyreview.org/academical.html
  */

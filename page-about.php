@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: About Page
  * Template for About Us page
  */
 
@@ -166,21 +167,21 @@ get_header(); ?>
     </section>
 
     <!-- Legal & University Information -->
-    <section class="section">
+    <section class="section" style="background: linear-gradient(rgba(35, 45, 75, 0.85), rgba(35, 45, 75, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg') center/cover no-repeat; background-attachment: fixed; color: white; padding: var(--spacing-xl) 0;">
         <div class="container">
-            <div class="hero-card" style="background: var(--secondary-color); border: none;">
-                <h2>University Affiliation & Policies</h2>
+            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: var(--spacing-xl); border: 1px solid rgba(255, 255, 255, 0.2);">
+                <h2 style="color: white; margin-bottom: var(--spacing-lg);">University Affiliation & Policies</h2>
 
                 <div style="margin-bottom: var(--spacing-md);">
-                    <h3 style="font-size: 1.25rem; color: var(--accent-color);">Independent Organization</h3>
-                    <p>
+                    <h3 style="font-size: 1.25rem; color: var(--accent-color); margin-bottom: var(--spacing-sm);">Independent Organization</h3>
+                    <p style="color: rgba(255, 255, 255, 0.95); line-height: 1.7;">
                         Although this organization has members who are University of Virginia students and may have University employees associated or engaged in its activities and affairs, the organization is not a part of or an agency of the University. It is a separate and independent organization which is responsible for and manages its own activities and affairs. The University does not direct, supervise or control the organization and is not responsible for the organization's contracts, acts, or omissions.
                     </p>
                 </div>
 
                 <div>
-                    <h3 style="font-size: 1.25rem; color: var(--accent-color);">Non-Discrimination Policy</h3>
-                    <p style="margin: 0;">
+                    <h3 style="font-size: 1.25rem; color: var(--accent-color); margin-bottom: var(--spacing-sm);">Non-Discrimination Policy</h3>
+                    <p style="margin: 0; color: rgba(255, 255, 255, 0.95); line-height: 1.7;">
                         The Virginia Policy Review does not restrict its membership, programs, or activities on the basis of age, color, disability, gender identity, marital status, national or ethnic origin, political affiliation, race, religion, sex (including pregnancy), sexual orientation, veteran status, and family and genetic information.
                     </p>
                 </div>

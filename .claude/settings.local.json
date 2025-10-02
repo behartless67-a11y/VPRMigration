@@ -22,7 +22,8 @@
       "Bash(nslookup:*)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(mysql:*)"
+      "Bash(mysql:*)",
+      "Read(//c/xampp/mysql/bin/**)"
     ],
     "deny": [],
     "ask": []

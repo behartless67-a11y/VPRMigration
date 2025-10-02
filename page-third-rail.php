@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: The Third Rail Blog Page
  * Template for The Third Rail blog page
  */
 
