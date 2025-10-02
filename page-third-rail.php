@@ -346,16 +346,16 @@ $years_query = $wpdb->get_col("
                         </h2>
 
                         <?php
-                        // Extract author from content if it starts with "By [Name]"
+                        // Extract author from content if it starts with "by [Name]"
                         $content = get_the_content();
                         $content = wp_strip_all_tags($content);
 
-                        // Check if content starts with "By [Author name]"
+                        // Check if content starts with "by [First Last]" (case insensitive)
                         $author_name = '';
-                        if (preg_match('/^By\s+([^\n.]+?)(?:\s|To\s|In\s|\.|,)/', $content, $matches)) {
+                        if (preg_match('/^by\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/i', $content, $matches)) {
                             $author_name = trim($matches[1]);
-                            // Remove the "By Author" part from content
-                            $content = preg_replace('/^By\s+[^\n.]+?\s+/', '', $content);
+                            // Remove the entire "by Author" part from content (everything up to first capital letter)
+                            $content = preg_replace('/^by\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s*/i', '', $content);
                         }
                         ?>
 
