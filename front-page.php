@@ -668,7 +668,7 @@ get_header(); ?>
                             <p>
                                 In early August, famine was confirmed in Zamzam, a camp in Sudan's North Darfur region that houses half a million displaced people. Understanding this crisis requires examining how conflict exacerbates humanitarian disasters and the international community's response.
                             </p>
-                            <a href="<?php echo home_url('/unpacking-famine-in-sudan'); ?>" class="read-more-btn">Read Full Article →</a>
+                            <a href="<?php echo home_url('/2025/10/02/unpacking-famine-in-sudan/'); ?>" class="read-more-btn">Read Full Article →</a>
                         </div>
                     </article>
 
