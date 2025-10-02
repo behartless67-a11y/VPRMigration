@@ -300,16 +300,6 @@ $years_query = $wpdb->get_col("
     <!-- Filters -->
     <section class="filters-bar">
         <div class="filters-container">
-            <label for="yearFilter" style="font-weight: 600;">Filter by Year:</label>
-            <select id="yearFilter" class="filter-select">
-                <option value="all" <?php echo $selected_year === 'all' ? 'selected' : ''; ?>>All Years</option>
-                <?php foreach ($years_query as $year) : ?>
-                    <option value="<?php echo $year; ?>" <?php echo $selected_year == $year ? 'selected' : ''; ?>>
-                        <?php echo $year; ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-
             <label for="categoryFilter" style="font-weight: 600;">Filter by Category:</label>
             <select id="categoryFilter" class="filter-select">
                 <option value="all">All Categories</option>
@@ -355,11 +345,28 @@ $years_query = $wpdb->get_col("
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h2>
 
+                        <?php
+                        // Extract author from content if it starts with "By [Name]"
+                        $content = get_the_content();
+                        $content = wp_strip_all_tags($content);
+
+                        // Check if content starts with "By [Author name]"
+                        $author_name = '';
+                        if (preg_match('/^By\s+([^\n.]+?)(?:\s|To\s|In\s|\.|,)/', $content, $matches)) {
+                            $author_name = trim($matches[1]);
+                            // Remove the "By Author" part from content
+                            $content = preg_replace('/^By\s+[^\n.]+?\s+/', '', $content);
+                        }
+                        ?>
+
+                        <?php if ($author_name) : ?>
+                            <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1rem;">
+                                By <?php echo esc_html($author_name); ?>
+                            </p>
+                        <?php endif; ?>
+
                         <div class="article-excerpt">
                             <?php
-                            // Get first 2-3 paragraphs of content
-                            $content = get_the_content();
-                            $content = wp_strip_all_tags($content);
                             $excerpt = wp_trim_words($content, 100, '...');
                             echo $excerpt;
                             ?>
@@ -397,33 +404,18 @@ $years_query = $wpdb->get_col("
 <script>
 // Filter functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const yearFilter = document.getElementById('yearFilter');
     const categoryFilter = document.getElementById('categoryFilter');
 
-    function updateFilters() {
-        const year = yearFilter.value;
-        const category = categoryFilter.value;
-
+    categoryFilter.addEventListener('change', function() {
+        const category = this.value;
         let url = window.location.pathname;
-        const params = [];
-
-        if (year !== 'all') {
-            params.push('year=' + year);
-        }
 
         if (category !== 'all') {
-            params.push('cat=' + category);
-        }
-
-        if (params.length > 0) {
-            url += '?' + params.join('&');
+            url += '?cat=' + category;
         }
 
         window.location.href = url;
-    }
-
-    yearFilter.addEventListener('change', updateFilters);
-    categoryFilter.addEventListener('change', updateFilters);
+    });
 });
 </script>
 
