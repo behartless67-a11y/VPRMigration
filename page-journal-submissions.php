@@ -82,7 +82,7 @@ get_header(); ?>
     font-size: 1.4rem;
     color: var(--text-secondary);
     max-width: 1200px;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
     line-height: 1.3;
 }
 
