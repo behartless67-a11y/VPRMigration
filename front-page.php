@@ -700,11 +700,11 @@ get_header(); ?>
                                 <span class="category-tag">Security</span>
                                 <time class="article-date-text">February 19, 2025</time>
                             </div>
-                            <h3>Protecting Critical Undersea Cable Infrastructure</h3>
+                            <h3>Current Landscape and Challenges With Undersea Cable Infrastructure</h3>
                             <p>
-                                Global internet and telecommunications rely on vulnerable undersea cables. Every day, $10 trillion in financial transactions and 99% of internet traffic flows through these critical connections. New policy frameworks aim to safeguard this infrastructure from emerging threats.
+                                Protecting the global network of undersea cables is vital to U.S. national security and global stability. Every day, $10 trillion in financial transactions and 99% of internet traffic flows through these critical connections. New policy frameworks aim to safeguard this infrastructure from emerging threats.
                             </p>
-                            <a href="#" class="read-more-btn">Read Full Article →</a>
+                            <a href="<?php echo home_url('/2025/10/02/current-landscape-and-challenges-with-undersea-cable-infrastructure/'); ?>" class="read-more-btn">Read Full Article →</a>
                         </div>
                     </article>
                 </div>
