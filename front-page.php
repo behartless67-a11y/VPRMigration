@@ -631,14 +631,16 @@ get_header(); ?>
     <!-- Clean Banner - Cornell Style -->
     <section class="cornell-banner">
         <div class="cornell-banner-content">
-            <h1>Virginia Policy Review</h1>
+            <h1 style="font-size: 6.5rem;">
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.1em;">Virginia</span>
+                <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
+            </h1>
             <nav class="cornell-nav">
                 <a href="<?php echo home_url('/'); ?>">Home</a>
                 <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
-                <a href="<?php echo home_url('/journal-issues'); ?>">Journal Issues</a>
-                <a href="<?php echo home_url('/contact'); ?>">Contact</a>
+                <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
             </nav>
             <p>Student perspectives on policy, research, and public affairs from the University of Virginia</p>
         </div>
@@ -666,7 +668,7 @@ get_header(); ?>
                             <p>
                                 In early August, famine was confirmed in Zamzam, a camp in Sudan's North Darfur region that houses half a million displaced people. Understanding this crisis requires examining how conflict exacerbates humanitarian disasters and the international community's response.
                             </p>
-                            <a href="<?php echo home_url('/unpacking-famine-in-sudan'); ?>" class="read-more-btn">Read Full Article →</a>
+                            <a href="<?php echo home_url('/2025/10/02/unpacking-famine-in-sudan/'); ?>" class="read-more-btn">Read Full Article →</a>
                         </div>
                     </article>
 
@@ -684,7 +686,7 @@ get_header(); ?>
                             <p>
                                 As Syria's political landscape shifts with HTS gaining power, Israel faces new security challenges that may prove more complex than the Assad regime. While Syria's situation highlights Iran's eroding foothold, the unpredictable nature of HTS-led governance presents new concerns.
                             </p>
-                            <a href="#" class="read-more-btn">Read Full Article →</a>
+                            <a href="<?php echo home_url('/2025/10/02/replacing-bashar-with-hts-a-false-sense-of-safety-for-israel/'); ?>" class="read-more-btn">Read Full Article →</a>
                         </div>
                     </article>
 
@@ -698,11 +700,11 @@ get_header(); ?>
                                 <span class="category-tag">Security</span>
                                 <time class="article-date-text">February 19, 2025</time>
                             </div>
-                            <h3>Protecting Critical Undersea Cable Infrastructure</h3>
+                            <h3>Current Landscape and Challenges With Undersea Cable Infrastructure</h3>
                             <p>
-                                Global internet and telecommunications rely on vulnerable undersea cables. Every day, $10 trillion in financial transactions and 99% of internet traffic flows through these critical connections. New policy frameworks aim to safeguard this infrastructure from emerging threats.
+                                Protecting the global network of undersea cables is vital to U.S. national security and global stability. Every day, $10 trillion in financial transactions and 99% of internet traffic flows through these critical connections. New policy frameworks aim to safeguard this infrastructure from emerging threats.
                             </p>
-                            <a href="#" class="read-more-btn">Read Full Article →</a>
+                            <a href="<?php echo home_url('/2025/10/02/current-landscape-and-challenges-with-undersea-cable-infrastructure/'); ?>" class="read-more-btn">Read Full Article →</a>
                         </div>
                     </article>
                 </div>

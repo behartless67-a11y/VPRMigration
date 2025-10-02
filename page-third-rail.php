@@ -1,9 +1,45 @@
 <?php
 /**
- * Template for The Third Rail blog page
+ * Template Name: The Third Rail Blog (Dynamic)
+ * Displays all blog articles with year and category filtering
  */
 
-get_header(); ?>
+get_header();
+
+// Get year from URL parameter, default to 'all'
+$selected_year = isset($_GET['year']) ? $_GET['year'] : 'all';
+$selected_category = isset($_GET['cat']) ? $_GET['cat'] : 'all';
+
+// Build query args
+$query_args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 20,
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+    'orderby' => 'date',
+    'order' => 'DESC'
+);
+
+// Filter by year
+if ($selected_year !== 'all') {
+    $query_args['year'] = $selected_year;
+}
+
+// Filter by category
+if ($selected_category !== 'all') {
+    $query_args['category_name'] = $selected_category;
+}
+
+$blog_query = new WP_Query($query_args);
+
+// Get available years from posts
+$years_query = $wpdb->get_col("
+    SELECT DISTINCT YEAR(post_date)
+    FROM {$wpdb->posts}
+    WHERE post_type = 'post' AND post_status = 'publish'
+    ORDER BY post_date DESC
+");
+
+?>
 
 <style>
 /* Hide default header */
@@ -11,12 +47,11 @@ get_header(); ?>
     display: none;
 }
 
-/* Reset main content padding */
 .main-content {
     padding: 0;
 }
 
-/* Header Banner - Cornell Style */
+/* Header Banner */
 .page-banner {
     background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
                 url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg');
@@ -24,7 +59,6 @@ get_header(); ?>
     background-position: center;
     background-attachment: fixed;
     padding: 4rem 0 2rem;
-    margin-top: 0;
 }
 
 .page-banner-content {
@@ -36,7 +70,7 @@ get_header(); ?>
 
 .page-banner h1 {
     font-family: var(--font-secondary);
-    font-size: 5rem;
+    font-size: 6.5rem;
     color: var(--primary-color);
     font-weight: 800;
     margin-bottom: 0.3rem;
@@ -57,10 +91,10 @@ get_header(); ?>
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
-    white-space: nowrap;
 }
 
-.page-nav a:hover {
+.page-nav a:hover,
+.page-nav a.active {
     color: var(--accent-color);
 }
 
@@ -75,14 +109,7 @@ get_header(); ?>
     transition: width 0.3s ease;
 }
 
-.page-nav a:hover::after {
-    width: 100%;
-}
-
-.page-nav a.active {
-    color: var(--accent-color);
-}
-
+.page-nav a:hover::after,
 .page-nav a.active::after {
     width: 100%;
 }
@@ -94,267 +121,300 @@ get_header(); ?>
     margin: 0 auto;
     line-height: 1.3;
 }
+
+/* Filters */
+.filters-bar {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.filters-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+}
+
+/* Articles List */
+.articles-section {
+    background: white;
+    padding: 3rem 0;
+}
+
+.articles-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.article-item {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.article-item:last-child {
+    border-bottom: none;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.article-date {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.article-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-secondary);
+    line-height: 1.3;
+}
+
+.article-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.article-title a:hover {
+    color: var(--accent-color);
+}
+
+.article-excerpt {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.continue-reading {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: gap 0.3s ease;
+}
+
+.continue-reading:hover {
+    gap: 0.6rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.pagination a,
+.pagination span {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination .current {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .page-banner h1 {
+        font-size: 3rem;
+    }
+
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-select {
+        width: 100%;
+    }
+}
 </style>
 
 <main class="main-content">
-    <!-- Page Banner - Cornell Style -->
+    <!-- Page Banner -->
     <section class="page-banner">
         <div class="page-banner-content">
-            <h1>Virginia Policy Review</h1>
+            <h1>
+                <span style="font-style: italic; color: var(--primary-color);">Virginia</span>
+                <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
+            </h1>
             <nav class="page-nav">
                 <a href="<?php echo home_url('/'); ?>">Home</a>
                 <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>" class="active">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
-                <a href="<?php echo home_url('/journal-issues'); ?>">Journal Issues</a>
-                <a href="<?php echo home_url('/contact'); ?>">Contact</a>
+                <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
             </nav>
             <p>Shorter takes on big issues - timely policy analysis and commentary</p>
         </div>
     </section>
 
-    <!-- Search and Categories -->
-    <section style="background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed; padding: var(--spacing-sm) 0;">
-        <div class="container" style="max-width: 1100px;">
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--spacing-md);">
-                <!-- Search -->
-                <div style="flex: 1; min-width: 300px;">
-                    <form role="search" method="get" action="<?php echo home_url('/'); ?>" style="display: flex; gap: var(--spacing-xs);">
-                        <input type="search" placeholder="Search articles..." name="s"
-                               style="flex: 1; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-family: var(--font-primary);">
-                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">
-                            Search
-                        </button>
-                    </form>
-                </div>
+    <!-- Filters -->
+    <section class="filters-bar">
+        <div class="filters-container">
+            <label for="categoryFilter" style="font-weight: 600;">Filter by Category:</label>
+            <select id="categoryFilter" class="filter-select">
+                <option value="all">All Categories</option>
+                <?php
+                $categories = get_categories(array('hide_empty' => true));
+                foreach ($categories as $category) :
+                    if ($category->name !== 'Uncategorized') :
+                ?>
+                    <option value="<?php echo $category->slug; ?>" <?php echo $selected_category === $category->slug ? 'selected' : ''; ?>>
+                        <?php echo $category->name; ?>
+                    </option>
+                <?php
+                    endif;
+                endforeach;
+                ?>
+            </select>
 
-                <!-- Categories Filter -->
-                <div>
-                    <select id="categoryFilter" style="padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-family: var(--font-primary);">
-                        <option value="all">All Categories</option>
-                        <option value="domestic">Domestic</option>
-                        <option value="economics">Economics</option>
-                        <option value="education">Education</option>
-                        <option value="electoral-politics">Electoral Politics</option>
-                        <option value="environment">Environment</option>
-                        <option value="gun-rights">Gun Rights</option>
-                        <option value="health">Health</option>
-                        <option value="international">International</option>
-                        <option value="justice">Justice</option>
-                        <option value="law">Law</option>
-                        <option value="politics">Politics</option>
-                        <option value="security">Security</option>
-                        <option value="social">Social</option>
-                        <option value="urban">Urban</option>
-                    </select>
-                </div>
-            </div>
+            <span style="margin-left: auto; color: var(--text-secondary);">
+                Showing <?php echo $blog_query->post_count; ?> of <?php echo $blog_query->found_posts; ?> articles
+            </span>
         </div>
     </section>
 
     <!-- Articles List -->
-    <section style="padding: var(--spacing-lg) 0;">
-        <div class="container" style="max-width: 1100px;">
-            <div id="articlesList" style="display: flex; flex-direction: column; gap: var(--spacing-xl);">
-                <!-- Article 1: Sudan Famine -->
-                <article class="article-item" data-category="international" style="border-bottom: 2px solid var(--border-color); padding-bottom: var(--spacing-lg);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
-                        <span style="background: var(--accent-color); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">International</span>
-                        <time style="color: var(--text-secondary); font-size: 0.95rem;">March 5, 2025</time>
-                    </div>
-                    <h3 style="font-size: 2rem; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--primary-color);">
-                        <a href="<?php echo home_url('/unpacking-famine-in-sudan'); ?>" style="color: var(--primary-color); text-decoration: none;">Unpacking Famine in Sudan</a>
-                    </h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-sm); font-family: var(--font-secondary); color: var(--text-primary);">
-                        In July 2024, famine was confirmed in Zamzam, a camp in Sudan's North Darfur region
-                        that houses half a million people displaced from the ongoing civil war. The war that
-                        broke out last April between the Sudanese Armed Forces (SAF) and its rival paramilitary
-                        Rapid Support Forces (RSF) sparked a hunger crisis with some 25 million people, about
-                        half of the Sudanese population, facing acute hunger.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--text-primary);">
-                        International experts used set criteria to confirm famine in Zamzam and added that there
-                        is a high risk that these conditions will continue beyond October if the conflict persists.
-                        To comprehend why experts are concerned about the spread of famine in Sudan, it's important
-                        to understand how rare famine is, how it is determined, who officially declares it, and
-                        how war exacerbates it.
-                    </p>
-                    <a href="<?php echo home_url('/unpacking-famine-in-sudan'); ?>" style="color: var(--accent-color); font-weight: 600; text-decoration: none; font-size: 1.05rem;">
-                        Continue reading →
-                    </a>
-                </article>
+    <section class="articles-section">
+        <div class="articles-container">
+            <?php if ($blog_query->have_posts()) : ?>
+                <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
+                    <article class="article-item">
+                        <div class="article-meta">
+                            <?php
+                            $categories = get_the_category();
+                            if (!empty($categories)) :
+                            ?>
+                                <span class="category-badge"><?php echo esc_html($categories[0]->name); ?></span>
+                            <?php endif; ?>
+                            <time class="article-date" datetime="<?php echo get_the_date('c'); ?>">
+                                <?php echo get_the_date('F j, Y'); ?>
+                            </time>
+                        </div>
 
-                <!-- Article 2: Israel/Syria -->
-                <article class="article-item" data-category="international" style="border-bottom: 2px solid var(--border-color); padding-bottom: var(--spacing-lg);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
-                        <span style="background: var(--accent-color); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">International</span>
-                        <time style="color: var(--text-secondary); font-size: 0.95rem;">February 26, 2025</time>
-                    </div>
-                    <h3 style="font-size: 2rem; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--primary-color);">
-                        <a href="<?php echo home_url('/replacing-bashar-with-hts-a-false-sense-of-safety-for-israel'); ?>" style="color: var(--primary-color); text-decoration: none;">Replacing Bashar with HTS: A False Sense of Safety for Israel</a>
-                    </h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-sm); font-family: var(--font-secondary); color: var(--text-primary);">
-                        While the situation in Syria highlights Iran's eroding foothold and Israel's growing sense of control,
-                        Israel now faces the challenge of an unpredictable HTS-led Syrian government.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--text-primary);">
-                        On December 15, 2024, Israeli Prime Minister Benjamin Netanyahu approved a plan to double the Israeli
-                        population in the Golan Heights, as Israel's defense minister Israel Katz justified the initiative due
-                        to "enormous security importance." After Bashar Al-Assad, the former president of Syria, was ousted by
-                        rebel forces who took over Syria, Israel launched airstrikes targeting Syria's military assets...
-                    </p>
-                    <a href="<?php echo home_url('/replacing-bashar-with-hts-a-false-sense-of-safety-for-israel'); ?>" style="color: var(--accent-color); font-weight: 600; text-decoration: none; font-size: 1.05rem;">
-                        Continue reading →
-                    </a>
-                </article>
+                        <h2 class="article-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h2>
 
-                <!-- Article 3: Undersea Cables -->
-                <article class="article-item" data-category="security" style="border-bottom: 2px solid var(--border-color); padding-bottom: var(--spacing-lg);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
-                        <span style="background: #2c3e50; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Security</span>
-                        <time style="color: var(--text-secondary); font-size: 0.95rem;">February 19, 2025</time>
-                    </div>
-                    <h3 style="font-size: 2rem; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--primary-color);">
-                        <a href="<?php echo home_url('/current-landscape-and-challenges-with-undersea-cable-infrastructure'); ?>" style="color: var(--primary-color); text-decoration: none;">Current Landscape and Challenges With Undersea Cable Infrastructure</a>
-                    </h3>
-                    <div style="background: var(--secondary-color); padding: var(--spacing-sm); border-radius: var(--border-radius); margin-bottom: var(--spacing-sm); border-left: 4px solid var(--accent-color);">
-                        <strong style="color: var(--primary-color);">Executive Summary</strong>
-                    </div>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-sm); font-family: var(--font-secondary); color: var(--text-primary);">
-                        Protecting the global network of undersea cables is vital to U.S. national security and global stability.
-                        Malign actors can easily target these cables, disrupting the flow of information sharing between the U.S.
-                        and its allies. This disruption creates an avenue for competition between the U.S. and its adversaries.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--text-primary);">
-                        Every day, an estimated $10 trillion USD worth of financial transactions flows through undersea cables,
-                        as well as 99% of all internet traffic. The importance of securing these cables was highlighted in March 2024,
-                        when three damaged undersea cables in the Red Sea affected 25% of internet traffic in the region.
-                    </p>
-                    <a href="<?php echo get_permalink(); ?>" style="color: var(--accent-color); font-weight: 600; text-decoration: none; font-size: 1.05rem;">
-                        Continue reading →
-                    </a>
-                </article>
+                        <?php
+                        // Extract author from content if it starts with "By [Name]"
+                        $content = get_the_content();
+                        $content = wp_strip_all_tags($content);
 
-                <!-- Article 4: Kansas City Transportation -->
-                <article class="article-item" data-category="urban" style="border-bottom: 2px solid var(--border-color); padding-bottom: var(--spacing-lg);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
-                        <span style="background: #27ae60; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Urban</span>
-                        <time style="color: var(--text-secondary); font-size: 0.95rem;">February 12, 2025</time>
-                    </div>
-                    <h3 style="font-size: 2rem; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--primary-color);">
-                        <a href="<?php echo home_url('/impact-of-public-transportation-for-low-income-individuals-accessing-employment-in-kansas-city'); ?>" style="color: var(--primary-color); text-decoration: none;">Impact of Public Transportation for Low-Income Individuals Accessing Employment in Kansas City</a>
-                    </h3>
-                    <div style="background: #ffebee; padding: var(--spacing-sm); border-radius: var(--border-radius); margin-bottom: var(--spacing-sm); border-left: 4px solid #e74c3c;">
-                        <strong style="color: #c0392b;">The Problem</strong>
-                    </div>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-sm); font-family: var(--font-secondary); color: var(--text-primary);">
-                        Low-income households in Kansas City, Missouri, face infrequent and unreliable access to connect them
-                        to areas with high employer concentration. Approximately 28 million Americans are dependent on public
-                        transit to travel outside of their residence. Those who rely on public transportation tend to be
-                        disproportionately low-income individuals.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--text-primary);">
-                        Simultaneously, many routes exclude the low-income populations that rely on them most. This remains true
-                        in Kansas City, Missouri, where 32% of households earn less than $50,000 in yearly income but only 13%
-                        of those households are within a half mile of high-frequency full-day transportation.
-                    </p>
-                    <a href="<?php echo get_permalink(); ?>" style="color: var(--accent-color); font-weight: 600; text-decoration: none; font-size: 1.05rem;">
-                        Continue reading →
-                    </a>
-                </article>
+                        // Check if content starts with "By [Author name]"
+                        $author_name = '';
+                        if (preg_match('/^By\s+([^\n.]+?)(?:\s|To\s|In\s|\.|,)/', $content, $matches)) {
+                            $author_name = trim($matches[1]);
+                            // Remove the "By Author" part from content
+                            $content = preg_replace('/^By\s+[^\n.]+?\s+/', '', $content);
+                        }
+                        ?>
 
-                <!-- Article 5: Russia/Syria -->
-                <article class="article-item" data-category="international" style="border-bottom: 2px solid var(--border-color); padding-bottom: var(--spacing-lg);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
-                        <span style="background: var(--accent-color); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">International</span>
-                        <time style="color: var(--text-secondary); font-size: 0.95rem;">January 23, 2025</time>
-                    </div>
-                    <h3 style="font-size: 2rem; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--primary-color);">
-                        <a href="<?php echo home_url('/syria-without-assad-what-russia-stands-to-lose'); ?>" style="color: var(--primary-color); text-decoration: none;">Syria Without Assad: What Russia Stands to Lose</a>
-                    </h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-sm); font-family: var(--font-secondary); color: var(--text-primary);">
-                        Syrian President Bashar al-Assad's asylum in Moscow marks a turning point, leaving Russia grappling
-                        with diminished diplomatic, military, and economic influence in a post-Assad, Hayat Tahrir al Sham (HTS)-led
-                        Syria amid the prioritized Russia-Ukraine conflict.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-md); font-family: var(--font-secondary); color: var(--text-primary);">
-                        On December 8, Syrian President Bashar al-Assad landed in Moscow and was granted asylum on humanitarian grounds,
-                        leaving behind a rebel-ruled Syria and the legacy of a decades-long regime backed by Russia. The now-marred
-                        Assad family "dynasty" had been formerly supported by the Soviet Union, both due to Baathist-Soviet ideological
-                        alignment and as a byproduct of Cold War-era power dynamics in the Middle East.
-                    </p>
-                    <a href="<?php echo get_permalink(); ?>" style="color: var(--accent-color); font-weight: 600; text-decoration: none; font-size: 1.05rem;">
-                        Continue reading →
-                    </a>
-                </article>
-            </div>
+                        <?php if ($author_name) : ?>
+                            <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1rem;">
+                                By <?php echo esc_html($author_name); ?>
+                            </p>
+                        <?php endif; ?>
 
-            <!-- Pagination -->
-            <div style="text-center; margin-top: var(--spacing-xl);">
-                <nav style="display: inline-flex; gap: var(--spacing-sm); align-items: center;">
-                    <a href="#" class="btn btn-secondary">← Previous</a>
-                    <span style="padding: 0 var(--spacing-md); color: var(--text-secondary);">Page 1 of 12</span>
-                    <a href="#" class="btn btn-secondary">Next →</a>
-                </nav>
-            </div>
-        </div>
-    </section>
+                        <div class="article-excerpt">
+                            <?php
+                            $excerpt = wp_trim_words($content, 100, '...');
+                            echo $excerpt;
+                            ?>
+                        </div>
 
-    <!-- Archive Sidebar -->
-    <section class="section section--alt">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-xl);">
-                <div>
-                    <h2>About The Third Rail</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: var(--spacing-md);">
-                        Named for the dangerous electrified rail in subway systems, "The Third Rail" represents
-                        the challenging policy topics that others might avoid but we tackle head-on.
-                    </p>
-                    <p>
-                        Our blog serves as a platform for timely analysis and commentary, allowing us to respond
-                        quickly to developing policy situations while maintaining the academic rigor our readers expect.
-                    </p>
+                        <a href="<?php the_permalink(); ?>" class="continue-reading">
+                            Continue reading →
+                        </a>
+                    </article>
+                <?php endwhile; ?>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <?php
+                    echo paginate_links(array(
+                        'total' => $blog_query->max_num_pages,
+                        'current' => max(1, get_query_var('paged')),
+                        'prev_text' => '← Previous',
+                        'next_text' => 'Next →',
+                    ));
+                    ?>
                 </div>
-                <div>
-                    <h3>Browse Archives</h3>
-                    <div style="display: flex; flex-direction: column; gap: var(--spacing-xs);">
-                        <a href="#" style="color: var(--accent-color); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">March 2025 (1)</a>
-                        <a href="#" style="color: var(--accent-color); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">February 2025 (3)</a>
-                        <a href="#" style="color: var(--accent-color); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">January 2025 (1)</a>
-                        <a href="#" style="color: var(--text-secondary); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">April 2022 (2)</a>
-                        <a href="#" style="color: var(--text-secondary); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">March 2022 (3)</a>
-                        <a href="#" class="read-more" style="padding: 0.5rem 0;">View All Archives →</a>
-                    </div>
-                </div>
-            </div>
+
+            <?php else : ?>
+                <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); padding: 3rem 0;">
+                    No articles found. Try selecting a different year or category.
+                </p>
+            <?php endif; ?>
+
+            <?php wp_reset_postdata(); ?>
         </div>
     </section>
 </main>
 
 <script>
-// Category filter functionality
+// Filter functionality
 document.addEventListener('DOMContentLoaded', function() {
     const categoryFilter = document.getElementById('categoryFilter');
-    const articles = document.querySelectorAll('.article-item');
 
     categoryFilter.addEventListener('change', function() {
-        const selectedCategory = this.value;
+        const category = this.value;
+        let url = window.location.pathname;
 
-        articles.forEach(function(article) {
-            if (selectedCategory === 'all') {
-                article.style.display = 'block';
-            } else {
-                const articleCategory = article.getAttribute('data-category');
-                if (articleCategory === selectedCategory) {
-                    article.style.display = 'block';
-                } else {
-                    article.style.display = 'none';
-                }
-            }
-        });
+        if (category !== 'all') {
+            url += '?cat=' + category;
+        }
 
-        // Scroll to top of articles list smoothly
-        document.getElementById('articlesList').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.location.href = url;
     });
 });
 </script>

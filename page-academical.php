@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Academical Podcast Page
  * Template for Academical Podcast page
  * Based on http://www.virginiapolicyreview.org/academical.html
  */
@@ -10,6 +11,43 @@ get_header(); ?>
 /* Hide default header */
 .site-header {
     display: none;
+}
+
+/* Ensure floating social is always visible */
+.floating-social {
+    display: flex !important;
+    position: fixed !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    z-index: 1000 !important;
+}
+
+.floating-social .social-float-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.floating-social .social-float-link:hover {
+    background: var(--accent-color) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(229, 114, 0, 0.4) !important;
+}
+
+.floating-social .social-float-link svg {
+    width: 22px !important;
+    height: 22px !important;
 }
 
 /* Reset main content padding */
@@ -101,68 +139,128 @@ get_header(); ?>
     <!-- Page Banner - Cornell Style -->
     <section class="page-banner">
         <div class="page-banner-content">
-            <h1>Virginia Policy Review</h1>
+            <h1 style="font-size: 6.5rem;">
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.1em;">Virginia</span>
+                <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
+            </h1>
             <nav class="page-nav">
                 <a href="<?php echo home_url('/'); ?>">Home</a>
                 <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>" class="active">Academical</a>
-                <a href="<?php echo home_url('/journal-issues'); ?>">Journal Issues</a>
-                <a href="<?php echo home_url('/contact'); ?>">Contact</a>
+                <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
             </nav>
             <p>The Official Podcast of the Virginia Policy Review</p>
         </div>
     </section>
 
     <!-- Recent Episodes -->
-    <section class="section" style="padding: var(--spacing-lg) 0; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container" style="max-width: 1400px;">
-            <h2 style="text-align: center; margin-bottom: var(--spacing-lg); font-family: var(--font-secondary); font-size: 2.5rem; color: var(--primary-color);">Recent Episodes</h2>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
-                <!-- Episode 1: Professor Daniel Player -->
+    <section class="section" style="padding: 2rem 0 3rem; background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container" style="max-width: 1600px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                <!-- Episode 8: Melody Barnes -->
                 <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
                     <div style="margin-bottom: var(--spacing-sm);">
-                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Education Policy</span>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem; margin-left: var(--spacing-sm);">• April 16, 2022</span>
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Episode 8</span>
                     </div>
-                    <h3 style="font-family: var(--font-secondary); font-size: 1.6rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Professor Daniel Player, University of Virginia</h3>
-                    <p style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
-                        Join us as we explore public-private partnerships in education policy with Professor Daniel Player from UVA's School of Education and Human Development. We discuss innovative approaches to policy creation, the role of research in shaping educational outcomes, and how academic institutions can better collaborate with government agencies.
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.8rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Melody Barnes</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Co-Director of UVA's Democracy Initiative and former Director of the Domestic Policy Council under President Obama. Discussion on democracy, civic engagement, and policy-making at the intersection of academia and government.
                     </p>
-                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem;">🎧 Listen Now →</a>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.05rem;">🎧 Listen Now →</a>
                 </article>
 
-                <!-- Episode 2: Ellie Kaufman -->
+                <!-- Episode 7: Kate Addleson -->
                 <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
                     <div style="margin-bottom: var(--spacing-sm);">
-                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">National Security</span>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem; margin-left: var(--spacing-sm);">• March 19, 2022</span>
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Episode 7</span>
                     </div>
-                    <h3 style="font-family: var(--font-secondary); font-size: 1.6rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Ellie Kaufman, CNN Producer</h3>
-                    <p style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
-                        CNN Producer Ellie Kaufman shares insights from the front lines of national security reporting. We discuss the challenges of covering complex policy issues, the importance of accurate journalism in policy debates, and career paths for aspiring policy journalists and communications professionals.
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.8rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Kate Addleson</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Director of the Sierra Club Virginia Chapter. Insights on environmental advocacy, conservation policy in Virginia, and grassroots organizing for climate action at the state level.
                     </p>
-                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem;">🎧 Listen Now →</a>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.05rem;">🎧 Listen Now →</a>
                 </article>
 
-                <!-- Episode 3: Dr. Sarah Mitchell -->
+                <!-- Episode 6: Michael Finnegan -->
                 <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
                     <div style="margin-bottom: var(--spacing-sm);">
-                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Environmental Policy</span>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem; margin-left: var(--spacing-sm);">• February 25, 2022</span>
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Episode 6</span>
                     </div>
-                    <h3 style="font-family: var(--font-secondary); font-size: 1.6rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Dr. Sarah Mitchell, Environmental Policy Institute</h3>
-                    <p style="font-size: 1rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
-                        Environmental policy expert Dr. Sarah Mitchell discusses climate change legislation, renewable energy initiatives, and the intersection of economic policy and environmental sustainability. A must-listen for understanding today's green policy landscape.
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.8rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Michael Finnegan</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        President of Atlantic Media. Discussion on the evolving media landscape, journalism's role in policy debates, and the future of political media in the digital age.
                     </p>
-                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem;">🎧 Listen Now →</a>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.05rem;">🎧 Listen Now →</a>
+                </article>
+
+                <!-- Episode 5: Ned Price -->
+                <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
+                    <div style="margin-bottom: var(--spacing-sm);">
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Episode 5</span>
+                    </div>
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.8rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Ned Price</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Director of Policy & Communications at National Security Action, former CIA analyst and NSC spokesperson under Obama. Insights on national security policy, intelligence community operations, and public diplomacy.
+                    </p>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.05rem;">🎧 Listen Now →</a>
+                </article>
+
+                <!-- Episode 4: Chris Lu -->
+                <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
+                    <div style="margin-bottom: var(--spacing-sm);">
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Episode 4</span>
+                    </div>
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.8rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Chris Lu</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Senior Fellow at UVA's Miller Center of Public Affairs and former Deputy Secretary of Labor under Obama. Discussion on labor policy, workforce development, and the intersection of public service and academia.
+                    </p>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.05rem;">🎧 Listen Now →</a>
+                </article>
+
+                <!-- Episode 3: Robert Zullo -->
+                <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
+                    <div style="margin-bottom: var(--spacing-sm);">
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Episode 3</span>
+                    </div>
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.8rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Robert Zullo</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Editor-in-Chief of the Virginia Mercury. Insights on Virginia state politics, investigative journalism, and the critical role of state-level political reporting in policy formation.
+                    </p>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.05rem;">🎧 Listen Now →</a>
+                </article>
+
+                <!-- Episode 2: Daniel Carey -->
+                <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
+                    <div style="margin-bottom: var(--spacing-sm);">
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Episode 2</span>
+                    </div>
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.8rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Daniel Carey</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Virginia's Secretary of Health and Human Resources. Discussion on Medicaid expansion in Virginia, addressing the opioid crisis, and state-level healthcare policy implementation.
+                    </p>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.05rem;">🎧 Listen Now →</a>
+                </article>
+
+                <!-- Episode 1: Matthew Olsen -->
+                <article style="border-bottom: 2px solid var(--accent-color); padding-bottom: var(--spacing-md);">
+                    <div style="margin-bottom: var(--spacing-sm);">
+                        <span style="color: var(--accent-color); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;">Episode 1</span>
+                    </div>
+                    <h3 style="font-family: var(--font-secondary); font-size: 1.8rem; margin-bottom: var(--spacing-sm); color: var(--primary-color); line-height: 1.3;">Matthew Olsen</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--spacing-sm);">
+                        Chief Trust and Security Officer at Uber and former Director of the National Counterterrorism Center. Insights on Guantanamo Bay, NSA operations, intelligence community reform, and the private sector's role in security.
+                    </p>
+                    <a href="https://anchor.fm/academical-vpr" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.05rem;">🎧 Listen Now →</a>
                 </article>
             </div>
 
-            <div style="text-align: center; margin-top: var(--spacing-md);">
+            <div style="text-align: center; margin-top: var(--spacing-lg);">
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: var(--spacing-sm);">
+                    Subscribe to Academical for more conversations with policy leaders, academics, and practitioners.
+                </p>
                 <a href="https://anchor.fm/academical-vpr" target="_blank" class="btn btn-secondary">
-                    View All 33 Episodes →
+                    Listen on Anchor →
                 </a>
             </div>
         </div>

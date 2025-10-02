@@ -80,17 +80,12 @@
             </div>
 
             <!-- Footer Bottom -->
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--spacing-md); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--spacing-md);">
-                <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">
-                    <p>&copy; <?php echo date('Y'); ?> Virginia Policy Review. All rights reserved.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem; line-height: 1.4;">
-                        This organization is not part of or an agency of the University of Virginia.
-                        It is an independent student organization responsible for its own activities and affairs.
-                    </p>
-                </div>
-                <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">
-                    <p>Founded 2009 • University of Virginia</p>
-                </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; text-align: center;">
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6;">
+                    &copy; <?php echo date('Y'); ?> Virginia Policy Review. All rights reserved. •
+                    This organization is not part of or an agency of the University of Virginia. It is an independent student organization responsible for its own activities and affairs. •
+                    Founded 2009 • University of Virginia
+                </p>
             </div>
         </div>
     </footer>
