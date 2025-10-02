@@ -729,125 +729,48 @@ get_header(); ?>
             <h2 class="section-title">Latest Articles</h2>
 
             <div class="articles-grid-4">
-                <article class="grid-article-card">
-                    <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/syria.jpg" alt="Article">
-                        <div class="image-attribution">Photo by Unsplash</div>
-                    </div>
-                    <div class="grid-article-content">
-                        <div class="article-meta">
-                            <span class="category-tag">International</span>
-                        </div>
-                        <h3><a href="#">Syria Without Assad: What Russia Stands to Lose</a></h3>
-                        <p class="grid-article-excerpt">Assad's asylum in Moscow marks a turning point for Russia's influence in the region.</p>
-                        <a href="#" class="read-more-btn">Read More →</a>
-                    </div>
-                </article>
+                <?php
+                // Query for 8 recent articles
+                $recent_articles = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 8,
+                    'orderby' => 'date',
+                    'order' => 'DESC'
+                ));
 
+                if ($recent_articles->have_posts()) :
+                    while ($recent_articles->have_posts()) : $recent_articles->the_post();
+                        $categories = get_the_category();
+                        $category_name = !empty($categories) ? $categories[0]->name : 'Uncategorized';
+                ?>
                 <article class="grid-article-card">
-                    <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/healthcare.jpg" alt="Article">
-                        <div class="image-attribution">Photo by Unsplash</div>
-                    </div>
+                    <?php if (has_post_thumbnail()) : ?>
+                        <div class="grid-article-image">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_post_thumbnail('medium'); ?>
+                            </a>
+                        </div>
+                    <?php else : ?>
+                        <div class="grid-article-image">
+                            <a href="<?php the_permalink(); ?>">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/lawn.jpg" alt="<?php the_title(); ?>">
+                            </a>
+                        </div>
+                    <?php endif; ?>
                     <div class="grid-article-content">
                         <div class="article-meta">
-                            <span class="category-tag">Domestic</span>
+                            <span class="category-tag"><?php echo esc_html($category_name); ?></span>
                         </div>
-                        <h3><a href="#">Healthcare Access in Rural Virginia Communities</a></h3>
-                        <p class="grid-article-excerpt">Rural communities face growing challenges as facilities close and providers relocate.</p>
-                        <a href="#" class="read-more-btn">Read More →</a>
+                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                        <p class="grid-article-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?></p>
+                        <a href="<?php the_permalink(); ?>" class="read-more-btn">Read More →</a>
                     </div>
                 </article>
-
-                <article class="grid-article-card">
-                    <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/agriculture.jpg" alt="Article">
-                        <div class="image-attribution">Photo by Unsplash</div>
-                    </div>
-                    <div class="grid-article-content">
-                        <div class="article-meta">
-                            <span class="category-tag">Environment</span>
-                        </div>
-                        <h3><a href="#">Climate Policy and Agricultural Innovation</a></h3>
-                        <p class="grid-article-excerpt">New sustainable farming approaches could revolutionize climate change mitigation.</p>
-                        <a href="#" class="read-more-btn">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="grid-article-card">
-                    <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/cybersecurity.jpg" alt="Article">
-                        <div class="image-attribution">Photo by Unsplash</div>
-                    </div>
-                    <div class="grid-article-content">
-                        <div class="article-meta">
-                            <span class="category-tag">Security</span>
-                        </div>
-                        <h3><a href="#">Cybersecurity in Critical Infrastructure</a></h3>
-                        <p class="grid-article-excerpt">Protecting essential systems from emerging cyber threats requires new approaches.</p>
-                        <a href="#" class="read-more-btn">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="grid-article-card">
-                    <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/education.jpg" alt="Article">
-                        <div class="image-attribution">Photo by Unsplash</div>
-                    </div>
-                    <div class="grid-article-content">
-                        <div class="article-meta">
-                            <span class="category-tag">Education</span>
-                        </div>
-                        <h3><a href="#">Student Debt and Higher Education Reform</a></h3>
-                        <p class="grid-article-excerpt">Examining policy solutions to the growing student debt crisis in America.</p>
-                        <a href="#" class="read-more-btn">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="grid-article-card">
-                    <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/economics.jpg" alt="Article">
-                        <div class="image-attribution">Photo by Unsplash</div>
-                    </div>
-                    <div class="grid-article-content">
-                        <div class="article-meta">
-                            <span class="category-tag">Economics</span>
-                        </div>
-                        <h3><a href="#">Inflation and Monetary Policy Responses</a></h3>
-                        <p class="grid-article-excerpt">How central banks navigate the challenges of persistent inflation.</p>
-                        <a href="#" class="read-more-btn">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="grid-article-card">
-                    <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ai.jpg" alt="Article">
-                        <div class="image-attribution">Photo by Unsplash</div>
-                    </div>
-                    <div class="grid-article-content">
-                        <div class="article-meta">
-                            <span class="category-tag">Technology</span>
-                        </div>
-                        <h3><a href="#">AI Regulation and Ethical Frameworks</a></h3>
-                        <p class="grid-article-excerpt">Balancing innovation with responsibility in artificial intelligence policy.</p>
-                        <a href="#" class="read-more-btn">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="grid-article-card">
-                    <div class="grid-article-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/justice.jpg" alt="Article">
-                        <div class="image-attribution">Photo by Unsplash</div>
-                    </div>
-                    <div class="grid-article-content">
-                        <div class="article-meta">
-                            <span class="category-tag">Social Policy</span>
-                        </div>
-                        <h3><a href="#">Criminal Justice Reform in Virginia</a></h3>
-                        <p class="grid-article-excerpt">Examining recent policy changes and their impact on communities.</p>
-                        <a href="#" class="read-more-btn">Read More →</a>
-                    </div>
-                </article>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+                ?>
             </div>
 
             <div class="load-more-section">
