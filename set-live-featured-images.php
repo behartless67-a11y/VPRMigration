@@ -9,16 +9,16 @@ require_once('wp-load.php');
 echo "<h1>Setting Featured Images for Homepage Articles</h1>";
 echo "<p>This will download images from the theme directory and set them as featured images.</p>";
 
-// Map article titles to image files
+// Map article titles to image files (exact titles from screenshot)
 $article_images = array(
-    'Voter ID and The Suppression of the Minority Vote' => 'voter-id.jpg',
-    '2016 Presidential Election: What Happened?' => 'election-2016.jpg',
-    'Inside the Ivory Tower After the Election' => 'university-tower.jpg',
-    'Modernizing Manufacturing in the United States' => 'manufacturing.jpg',
-    'Workers\' Rights on the High Seas' => 'cruise-workers.jpg',
-    'Virginia\'s Coastal Resiliency' => 'coastal-erosion.jpg',
-    'Should We Be Concerned About NATO?' => 'nato-alliance.jpg',
-    'Trump Administration Makes Moves towards Asia' => 'asia-diplomacy.jpg'
+    'Hiring: Color-blind judge, 77002' => 'hiring-courthouse.jpg',
+    'The Bureau of Spousal Assignment: Could recent economic research solve both loneliness and income inequality?' => 'marriage-couple.jpg',
+    'Ending the welfare cycle' => 'welfare-help.jpg',
+    'The problem with trying: What James Piereson and Naomi Riley got horribly wrong' => 'policy-school.jpg',
+    'Gritty educations' => 'grit-education.jpg',
+    'YES WE BAN: Millennials, Twitter, and Erdogan\'s Folly' => 'twitter-social.jpg',
+    'A cure for the common Crimea' => 'crimea-ukraine.jpg',
+    'Of unions and dictators: A better way forward' => 'labor-sports.jpg'
 );
 
 $images_set = 0;
