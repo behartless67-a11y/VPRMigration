@@ -774,7 +774,7 @@ get_header(); ?>
             </div>
 
             <div class="load-more-section">
-                <button class="btn-load-more">Load More Articles</button>
+                <a href="<?php echo home_url('/the-third-rail'); ?>" class="btn-load-more">Load More Articles</a>
             </div>
         </div>
     </section>
