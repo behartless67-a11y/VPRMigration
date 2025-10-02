@@ -350,11 +350,15 @@ $years_query = $wpdb->get_col("
                         $content = get_the_content();
                         $content = wp_strip_all_tags($content);
 
+                        // Remove zero-width spaces and other invisible characters
+                        $content = preg_replace('/[\x{200B}\x{200C}\x{200D}\x{FEFF}]/u', '', $content);
+                        $content = trim($content);
+
                         // Check if content starts with "by [First Last]" or "By [First Last]"
                         $author_name = '';
                         if (preg_match('/^[Bb]y\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)(?=[A-Z]|\s|$)/u', $content, $matches)) {
                             $author_name = trim($matches[1]);
-                            // Remove "by Author" including any text up to the next sentence (capital letter after period/space)
+                            // Remove "by Author" from start of content
                             $content = preg_replace('/^[Bb]y\s+' . preg_quote($author_name, '/') . '\s*/u', '', $content);
                         }
                         ?>
