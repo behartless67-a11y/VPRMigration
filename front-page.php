@@ -686,7 +686,7 @@ get_header(); ?>
                             <p>
                                 As Syria's political landscape shifts with HTS gaining power, Israel faces new security challenges that may prove more complex than the Assad regime. While Syria's situation highlights Iran's eroding foothold, the unpredictable nature of HTS-led governance presents new concerns.
                             </p>
-                            <a href="#" class="read-more-btn">Read Full Article →</a>
+                            <a href="<?php echo home_url('/2025/10/02/replacing-bashar-with-hts-a-false-sense-of-safety-for-israel/'); ?>" class="read-more-btn">Read Full Article →</a>
                         </div>
                     </article>
 
