@@ -11,6 +11,43 @@ get_header(); ?>
     display: none;
 }
 
+/* Ensure floating social is always visible */
+.floating-social {
+    display: flex !important;
+    position: fixed !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    z-index: 1000 !important;
+}
+
+.floating-social .social-float-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.floating-social .social-float-link:hover {
+    background: var(--accent-color) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(229, 114, 0, 0.4) !important;
+}
+
+.floating-social .social-float-link svg {
+    width: 22px !important;
+    height: 22px !important;
+}
+
 /* Reset main content padding */
 .main-content {
     padding: 0;
@@ -100,14 +137,16 @@ get_header(); ?>
     <!-- Page Banner - Cornell Style -->
     <section class="page-banner">
         <div class="page-banner-content">
-            <h1>Virginia Policy Review</h1>
+            <h1 style="font-size: 6.5rem;">
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.1em;">Virginia</span>
+                <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
+            </h1>
             <nav class="page-nav">
                 <a href="<?php echo home_url('/'); ?>">Home</a>
                 <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>">The Third Rail</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
                 <a href="<?php echo home_url('/journal-issues'); ?>" class="active">Journal Issues</a>
-                <a href="<?php echo home_url('/contact'); ?>">Contact</a>
             </nav>
             <p>Current and archived publications of the Virginia Policy Review</p>
         </div>
