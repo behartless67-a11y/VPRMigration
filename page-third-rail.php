@@ -6,9 +6,10 @@
 
 get_header();
 
-// Get year from URL parameter, default to 'all'
+// Get filters from URL parameters
 $selected_year = isset($_GET['year']) ? $_GET['year'] : 'all';
 $selected_category = isset($_GET['cat']) ? $_GET['cat'] : 'all';
+$search_query = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
 
 // Build query args
 $query_args = array(
@@ -27,6 +28,11 @@ if ($selected_year !== 'all') {
 // Filter by category
 if ($selected_category !== 'all') {
     $query_args['category_name'] = $selected_category;
+}
+
+// Search query
+if (!empty($search_query)) {
+    $query_args['s'] = $search_query;
 }
 
 $blog_query = new WP_Query($query_args);
@@ -137,6 +143,63 @@ $years_query = $wpdb->get_col("
     gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-input {
+    padding: 0.75rem 3rem 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(232, 119, 34, 0.1);
+}
+
+.search-button {
+    position: absolute;
+    right: 3rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.search-button:hover {
+    color: var(--accent-color);
+}
+
+.clear-search {
+    position: absolute;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.clear-search:hover {
+    color: var(--primary-color);
 }
 
 .filter-select {
@@ -272,6 +335,14 @@ $years_query = $wpdb->get_col("
         align-items: stretch;
     }
 
+    .search-box {
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
     .filter-select {
         width: 100%;
     }
@@ -300,7 +371,32 @@ $years_query = $wpdb->get_col("
     <!-- Filters -->
     <section class="filters-bar">
         <div class="filters-container">
-            <label for="categoryFilter" style="font-weight: 600;">Filter by Category:</label>
+            <!-- Search Box -->
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="Search articles..."
+                    value="<?php echo esc_attr($search_query); ?>"
+                >
+                <button id="searchButton" class="search-button">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <?php if (!empty($search_query)) : ?>
+                    <button id="clearSearch" class="clear-search" title="Clear search">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                <?php endif; ?>
+            </div>
+
+            <label for="categoryFilter" style="font-weight: 600;">Category:</label>
             <select id="categoryFilter" class="filter-select">
                 <option value="all">All Categories</option>
                 <?php
@@ -318,7 +414,11 @@ $years_query = $wpdb->get_col("
             </select>
 
             <span style="margin-left: auto; color: var(--text-secondary);">
-                Showing <?php echo $blog_query->post_count; ?> of <?php echo $blog_query->found_posts; ?> articles
+                <?php if (!empty($search_query)) : ?>
+                    Search results: <strong><?php echo $blog_query->found_posts; ?></strong> articles
+                <?php else : ?>
+                    Showing <?php echo $blog_query->post_count; ?> of <?php echo $blog_query->found_posts; ?> articles
+                <?php endif; ?>
             </span>
         </div>
     </section>
@@ -406,19 +506,67 @@ $years_query = $wpdb->get_col("
 </main>
 
 <script>
-// Filter functionality
+// Search and Filter functionality
 document.addEventListener('DOMContentLoaded', function() {
     const categoryFilter = document.getElementById('categoryFilter');
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    const clearSearch = document.getElementById('clearSearch');
 
-    categoryFilter.addEventListener('change', function() {
-        const category = this.value;
+    // Build URL with filters
+    function buildFilterUrl(category, searchTerm) {
         let url = window.location.pathname;
+        const params = new URLSearchParams();
 
-        if (category !== 'all') {
-            url += '?cat=' + category;
+        if (category && category !== 'all') {
+            params.append('cat', category);
         }
 
-        window.location.href = url;
+        if (searchTerm && searchTerm.trim() !== '') {
+            params.append('s', searchTerm.trim());
+        }
+
+        const queryString = params.toString();
+        return queryString ? url + '?' + queryString : url;
+    }
+
+    // Category filter
+    categoryFilter.addEventListener('change', function() {
+        const category = this.value;
+        const searchTerm = searchInput.value;
+        window.location.href = buildFilterUrl(category, searchTerm);
+    });
+
+    // Search on button click
+    searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value;
+        const category = categoryFilter.value;
+        window.location.href = buildFilterUrl(category, searchTerm);
+    });
+
+    // Search on Enter key
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const searchTerm = this.value;
+            const category = categoryFilter.value;
+            window.location.href = buildFilterUrl(category, searchTerm);
+        }
+    });
+
+    // Clear search
+    if (clearSearch) {
+        clearSearch.addEventListener('click', function() {
+            const category = categoryFilter.value;
+            window.location.href = buildFilterUrl(category, '');
+        });
+    }
+
+    // Focus search input on Ctrl/Cmd + K
+    document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            searchInput.focus();
+        }
     });
 });
 </script>
