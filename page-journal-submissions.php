@@ -6,79 +6,38 @@
 get_header(); ?>
 
 <main class="main-content">
-    <!-- Compact Header -->
-    <section style="padding: var(--spacing-lg) 0; background: var(--white);">
+    <!-- Hero Section -->
+    <section class="hero-section" style="height: 35vh; min-height: 250px; background: linear-gradient(rgba(35, 45, 75, 0.8), rgba(35, 45, 75, 0.8)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg') center/cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center;">
         <div class="container">
-            <div class="text-center">
-                <h1 style="font-size: 2.5rem; margin-bottom: var(--spacing-sm); font-family: var(--font-secondary);">Journal Submissions</h1>
-                <p style="font-size: 1.1rem; color: var(--text-secondary); margin: 0;">Submit your policy research and analysis to Virginia Policy Review</p>
-            </div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-family: 'Crimson Text', serif;">Submission Guidelines</h1>
         </div>
     </section>
 
-    <!-- Submission Guidelines -->
-    <section class="section" style="padding: var(--spacing-md) 0;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--spacing-md);">
+    <!-- Submission Guidelines Content -->
+    <section class="section" style="padding: 3rem 0; background: white;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; line-height: 1.8;">
+            <p style="margin-bottom: 2rem;">Thank you for your interest in Virginia Policy Review! Submissions for the 2025-2026 Journal will open soon!</p>
 
-                <!-- What We Accept -->
-                <article class="featured-card">
-                    <h3 style="color: var(--accent-color); margin-bottom: var(--spacing-md);">📄 What We Accept</h3>
-                    <div style="display: grid; gap: var(--spacing-sm);">
-                        <div style="border-left: 4px solid var(--accent-color); padding-left: var(--spacing-sm);">
-                            <h4>Research Articles</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Original policy research (2,000-3,000 words)</p>
-                        </div>
-                        <div style="border-left: 4px solid var(--primary-color); padding-left: var(--spacing-sm);">
-                            <h4>Opinion Pieces</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Commentary on current issues (500-1,500 words)</p>
-                        </div>
-                        <div style="border-left: 4px solid var(--text-secondary); padding-left: var(--spacing-sm);">
-                            <h4>Policy Briefs</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Concise analysis (1,000-1,500 words)</p>
-                        </div>
-                    </div>
-                </article>
+            <h2 style="font-family: 'Crimson Text', serif; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-color);">Research Article</h2>
+            <p style="margin-bottom: 2rem;">These articles are typically longer and reflect some kind of research in a particular policy area of interest. This can include an empirical analysis of a government program or a case study of some kind. These articles can take a position, make recommendations, or suggest specific improvements to a particular program or policy. Length may vary, but they must be no longer than 7000 words. Please also include an abstract no longer than 250 words and a short biography on each author no longer than 100 words.</p>
 
-                <!-- How to Submit -->
-                <article class="featured-card">
-                    <h3 style="color: var(--accent-color); margin-bottom: var(--spacing-md);">📝 How to Submit</h3>
-                    <div style="display: grid; gap: var(--spacing-sm);">
-                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
-                            <div style="background: var(--accent-color); color: white; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.8rem;">1</div>
-                            <p style="margin: 0; font-size: 0.9rem;"><strong>Email:</strong> submissions@virginiapolicyreview.org</p>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
-                            <div style="background: var(--accent-color); color: white; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.8rem;">2</div>
-                            <p style="margin: 0; font-size: 0.9rem;"><strong>Include:</strong> Cover letter & manuscript</p>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
-                            <div style="background: var(--accent-color); color: white; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.8rem;">3</div>
-                            <p style="margin: 0; font-size: 0.9rem;"><strong>Format:</strong> Chicago citation style</p>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
-                            <div style="background: var(--accent-color); color: white; width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.8rem;">4</div>
-                            <p style="margin: 0; font-size: 0.9rem;"><strong>Response:</strong> 4-6 weeks</p>
-                        </div>
-                    </div>
-                </article>
+            <h2 style="font-family: 'Crimson Text', serif; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-color);">Commentary/Op-ed</h2>
+            <p style="margin-bottom: 2rem;">These entries are generally shorter and are intended to reflect different perspectives on a particular issue. These articles should take a position on a particular topic and must be no longer than 2,000 words. Please include a short biography no longer than 100 words on each author.</p>
 
-                <!-- Contact -->
-                <article class="featured-card" style="background: linear-gradient(135deg, var(--accent-color), #004499); color: white;">
-                    <h3 style="color: white; margin-bottom: var(--spacing-md);">📧 Get in Touch</h3>
-                    <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-md); font-size: 0.95rem;">
-                        Questions about submissions or want to discuss a potential article?
-                    </p>
-                    <div style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap;">
-                        <a href="mailto:submissions@virginiapolicyreview.org" class="btn" style="background: white; color: var(--accent-color); font-size: 0.9rem; padding: 0.5rem 1rem;">
-                            📧 Submit
-                        </a>
-                        <a href="mailto:contact@virginiapolicyreview.org" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; font-size: 0.9rem; padding: 0.5rem 1rem;">
-                            💬 Contact
-                        </a>
-                    </div>
-                </article>
-            </div>
+            <h2 style="font-family: 'Crimson Text', serif; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-color);">Citations</h2>
+            <p style="margin-bottom: 2rem;">All citations must follow the APA or Chicago Citation Style.</p>
+
+            <h2 style="font-family: 'Crimson Text', serif; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-color);">Style</h2>
+            <ul style="margin-bottom: 2rem; padding-left: 2rem;">
+                <li>Use Times New Roman font in 12pt.</li>
+                <li>Double-space your submission.</li>
+            </ul>
+
+            <h2 style="font-family: 'Crimson Text', serif; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-color);">2025-2026 theme: "Policy for the Public Good."</h2>
+
+            <p style="margin-top: 3rem; padding: 1.5rem; background: #f8f9fa; border-left: 4px solid var(--accent-color);">
+                For more information, email Executive Editor Sarah King and Managing Editor George Langhammer.
+            </p>
         </div>
     </section>
 </main>
