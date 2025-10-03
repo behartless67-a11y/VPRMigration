@@ -85,8 +85,8 @@ $years_query = $wpdb->get_col("
 }
 
 .page-banner h1 span {
-    -webkit-text-stroke: 2px var(--accent-color);
-    text-stroke: 2px var(--accent-color);
+    -webkit-text-stroke: 1px var(--accent-color);
+    text-stroke: 1px var(--accent-color);
 }
 
 .page-nav {

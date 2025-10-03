@@ -46,8 +46,8 @@ get_header(); ?>
 }
 
 .cornell-banner h1 span {
-    -webkit-text-stroke: 2px var(--accent-color);
-    text-stroke: 2px var(--accent-color);
+    -webkit-text-stroke: 1px var(--accent-color);
+    text-stroke: 1px var(--accent-color);
 }
 
 .cornell-nav {
