@@ -219,7 +219,7 @@ get_header(); ?>
     <section style="padding: var(--spacing-lg) 0; background: linear-gradient(135deg, var(--primary-color) 0%, #333333 100%); color: white;">
         <div class="container text-center">
             <h2 style="color: white; margin-bottom: var(--spacing-md);">Subscribe to Academical</h2>
-            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
+            <p style="font-size: 1.6rem; color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
                 Don't miss our policy discussions and expert interviews. Subscribe on your favorite platform.
             </p>
             <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">

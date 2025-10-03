@@ -74,7 +74,7 @@ get_header(); ?>
 
 .page-banner h1 {
     font-family: var(--font-secondary);
-    font-size: 5rem;
+    font-size: 8rem;
     color: var(--primary-color);
     font-weight: 800;
     margin-bottom: 0.3rem;
@@ -90,7 +90,7 @@ get_header(); ?>
 
 .page-nav a {
     font-family: var(--font-secondary);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--primary-color);
     text-decoration: none;
     position: relative;
@@ -126,7 +126,7 @@ get_header(); ?>
 }
 
 .page-banner p {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--text-secondary);
     max-width: 1200px;
     margin: 0 auto;
@@ -138,8 +138,8 @@ get_header(); ?>
     <!-- Page Banner - Cornell Style -->
     <section class="page-banner">
         <div class="page-banner-content">
-            <h1 style="font-size: 6.5rem;">
-                <span style="font-style: italic; color: var(--primary-color); font-size: 1.1em;">Virginia</span>
+            <h1 style="font-size: 8rem;">
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.15em;">Virginia</span>
                 <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
             </h1>
             <nav class="page-nav">

@@ -91,7 +91,7 @@ get_header(); ?>
     <!-- Current Design -->
     <section class="test-section" style="background: var(--secondary-color);">
         <div class="option-label">Current Design</div>
-        <h1 style="font-family: var(--font-secondary); font-size: 5rem; color: var(--primary-color); font-weight: 800; margin: 0;">
+        <h1 style="font-family: var(--font-secondary); font-size: 8rem; color: var(--primary-color); font-weight: 800; margin: 0;">
             Virginia Policy Review
         </h1>
         <p class="option-description">All one style, serif font, navy blue</p>
@@ -100,7 +100,7 @@ get_header(); ?>
     <!-- Option 1: Split Color -->
     <section class="test-section">
         <div class="option-label">Option 1: Split Color (Sophisticated)</div>
-        <h1 style="font-family: var(--font-secondary); font-size: 5rem; font-weight: 800; margin: 0;">
+        <h1 style="font-family: var(--font-secondary); font-size: 8rem; font-weight: 800; margin: 0;">
             <span style="color: var(--primary-color);">Virginia</span>
             <span style="color: var(--accent-color);"> Policy Review</span>
         </h1>
@@ -111,7 +111,7 @@ get_header(); ?>
     <section class="test-section">
         <div class="option-label">Option 2: Font Contrast (Editorial)</div>
         <h1 style="margin: 0; color: var(--primary-color);">
-            <span style="font-family: var(--font-secondary); font-size: 5rem; font-weight: 700;">Virginia</span><br>
+            <span style="font-family: var(--font-secondary); font-size: 8rem; font-weight: 700;">Virginia</span><br>
             <span style="font-family: var(--font-primary); font-size: 2.5rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">Policy Review</span>
         </h1>
         <p class="option-description">"Virginia" in bold serif, "POLICY REVIEW" in sans-serif caps smaller, both UVA Blue</p>
@@ -121,8 +121,8 @@ get_header(); ?>
     <section class="test-section">
         <div class="option-label">Option 3: Weight Contrast (Modern)</div>
         <h1 style="font-family: var(--font-secondary); color: var(--primary-color); margin: 0;">
-            <span style="font-size: 5rem; font-weight: 400;">Virginia</span>
-            <span style="font-size: 5rem; font-weight: 800;"> Policy Review</span>
+            <span style="font-size: 8rem; font-weight: 400;">Virginia</span>
+            <span style="font-size: 8rem; font-weight: 800;"> Policy Review</span>
         </h1>
         <p class="option-description">"Virginia" in lighter weight, "Policy Review" in heavy bold, both serif, UVA Blue</p>
     </section>
@@ -131,8 +131,8 @@ get_header(); ?>
     <section class="test-section">
         <div class="option-label">Option 4: Magazine Style (Recommended)</div>
         <h1 style="font-family: var(--font-secondary); margin: 0;">
-            <span style="font-size: 5rem; font-weight: 600; font-style: italic; color: var(--primary-color);">Virginia</span>
-            <span style="font-size: 5rem; font-weight: 800; color: var(--accent-color);"> Policy Review</span>
+            <span style="font-size: 8rem; font-weight: 600; font-style: italic; color: var(--primary-color);">Virginia</span>
+            <span style="font-size: 8rem; font-weight: 800; color: var(--accent-color);"> Policy Review</span>
         </h1>
         <p class="option-description">"Virginia" in italic serif blue, "Policy Review" in bold serif orange</p>
     </section>
@@ -151,8 +151,8 @@ get_header(); ?>
     <section class="test-section">
         <div class="option-label">Option 6: Bold Contrast</div>
         <h1 style="font-family: var(--font-secondary); margin: 0;">
-            <span style="font-size: 5rem; font-weight: 800; color: var(--accent-color);">Virginia</span>
-            <span style="font-size: 5rem; font-weight: 400; color: var(--primary-color);"> Policy Review</span>
+            <span style="font-size: 8rem; font-weight: 800; color: var(--accent-color);">Virginia</span>
+            <span style="font-size: 8rem; font-weight: 400; color: var(--primary-color);"> Policy Review</span>
         </h1>
         <p class="option-description">"Virginia" in bold orange, "Policy Review" in light blue, inverted emphasis</p>
     </section>
@@ -161,7 +161,7 @@ get_header(); ?>
     <section style="padding: 3rem 0; background: var(--white); text-align: center;">
         <div class="container">
             <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Choose Your Style</h2>
-            <p style="font-family: var(--font-secondary); font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            <p style="font-family: var(--font-secondary); font-size: 1.6rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
                 Let me know which option you prefer, or if you'd like me to create variations on any of these styles!
             </p>
         </div>

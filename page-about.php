@@ -26,7 +26,7 @@ get_header(); ?>
         <div class="container">
             <h2 class="text-center mb-lg">Mission</h2>
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: var(--spacing-md); font-family: var(--font-secondary);">
+                <p style="font-size: 1.6rem; line-height: 1.8; margin-bottom: var(--spacing-md); font-family: var(--font-secondary);">
                     The <strong>Virginia Policy Review</strong> is a student-run policy journal that strives to publish work that will impact the wider policy dialogue. Our mission is to do this through a variety of journalistic mediums, including research, opinion pieces, interviews, and our podcast.
                 </p>
                 <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: var(--spacing-lg); font-family: var(--font-secondary);">
@@ -43,7 +43,7 @@ get_header(); ?>
         <div class="container">
             <div class="text-center mb-lg">
                 <h2>Meet The Staff</h2>
-                <p style="font-size: 1.2rem; color: var(--text-secondary);">
+                <p style="font-size: 1.6rem; color: var(--text-secondary);">
                     The dedicated team behind Virginia Policy Review
                 </p>
             </div>
@@ -87,7 +87,7 @@ get_header(); ?>
         <div class="container">
             <div class="text-center mb-lg">
                 <h2>Our Impact</h2>
-                <p style="font-size: 1.2rem; color: var(--text-secondary);">
+                <p style="font-size: 1.6rem; color: var(--text-secondary);">
                     Over a decade of meaningful policy dialogue
                 </p>
             </div>
@@ -118,7 +118,7 @@ get_header(); ?>
         <div class="container">
             <div class="text-center mb-lg">
                 <h2>Our Publications</h2>
-                <p style="font-size: 1.2rem; color: var(--text-secondary);">
+                <p style="font-size: 1.6rem; color: var(--text-secondary);">
                     Multiple platforms for policy dialogue and research
                 </p>
             </div>
@@ -193,7 +193,7 @@ get_header(); ?>
     <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, #333333 100%); color: white;">
         <div class="container text-center">
             <h2 style="color: white; margin-bottom: var(--spacing-md);">Join Our Mission</h2>
-            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
+            <p style="font-size: 1.6rem; color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
                 Interested in contributing to policy dialogue? We welcome submissions, new members, and collaboration opportunities.
             </p>
             <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">

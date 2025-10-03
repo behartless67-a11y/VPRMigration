@@ -37,10 +37,10 @@ get_header(); ?>
 
 .cornell-banner h1 {
     font-family: var(--font-secondary);
-    font-size: 5rem;
+    font-size: 8rem;
     color: var(--primary-color);
     font-weight: 800;
-    margin-bottom: 0.3rem;
+    margin-bottom: 1rem;
     line-height: 1;
 }
 
@@ -48,12 +48,12 @@ get_header(); ?>
     display: flex;
     justify-content: center;
     gap: 2.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .cornell-nav a {
     font-family: var(--font-secondary);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--primary-color);
     text-decoration: none;
     position: relative;
@@ -81,7 +81,7 @@ get_header(); ?>
 }
 
 .cornell-banner p {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--text-secondary);
     max-width: 1200px;
     margin: 0 auto;
@@ -631,8 +631,8 @@ get_header(); ?>
     <!-- Clean Banner - Cornell Style -->
     <section class="cornell-banner">
         <div class="cornell-banner-content">
-            <h1 style="font-size: 6.5rem;">
-                <span style="font-style: italic; color: var(--primary-color); font-size: 1.1em;">Virginia</span>
+            <h1>
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.15em;">Virginia</span>
                 <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
             </h1>
             <nav class="cornell-nav">

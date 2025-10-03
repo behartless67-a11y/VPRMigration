@@ -76,7 +76,7 @@ $years_query = $wpdb->get_col("
 
 .page-banner h1 {
     font-family: var(--font-secondary);
-    font-size: 6.5rem;
+    font-size: 8rem;
     color: var(--primary-color);
     font-weight: 800;
     margin-bottom: 0.3rem;
@@ -92,7 +92,7 @@ $years_query = $wpdb->get_col("
 
 .page-nav a {
     font-family: var(--font-secondary);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--primary-color);
     text-decoration: none;
     position: relative;
@@ -121,7 +121,7 @@ $years_query = $wpdb->get_col("
 }
 
 .page-banner p {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--text-secondary);
     max-width: 1200px;
     margin: 0 auto;
@@ -495,7 +495,7 @@ $years_query = $wpdb->get_col("
                 </div>
 
             <?php else : ?>
-                <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); padding: 3rem 0;">
+                <p style="text-align: center; font-size: 1.6rem; color: var(--text-secondary); padding: 3rem 0;">
                     No articles found. Try selecting a different year or category.
                 </p>
             <?php endif; ?>

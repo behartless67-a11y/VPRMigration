@@ -74,7 +74,7 @@ get_header(); ?>
 
 .page-banner h1 {
     font-family: var(--font-secondary);
-    font-size: 5rem;
+    font-size: 8rem;
     color: var(--primary-color);
     font-weight: 800;
     margin-bottom: 0.3rem;
@@ -90,7 +90,7 @@ get_header(); ?>
 
 .page-nav a {
     font-family: var(--font-secondary);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--primary-color);
     text-decoration: none;
     position: relative;
@@ -126,7 +126,7 @@ get_header(); ?>
 }
 
 .page-banner p {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--text-secondary);
     max-width: 1200px;
     margin: 0 auto;
@@ -138,8 +138,8 @@ get_header(); ?>
     <!-- Page Banner - Cornell Style -->
     <section class="page-banner">
         <div class="page-banner-content">
-            <h1 style="font-size: 6.5rem;">
-                <span style="font-style: italic; color: var(--primary-color); font-size: 1.1em;">Virginia</span>
+            <h1 style="font-size: 8rem;">
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.15em;">Virginia</span>
                 <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
             </h1>
             <nav class="page-nav">
@@ -164,7 +164,7 @@ get_header(); ?>
                     <h2 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">Get In Touch</h2>
 
                     <div style="margin-bottom: var(--spacing-md);">
-                        <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 0.5rem;">Address</h3>
+                        <h3 style="color: var(--accent-color); font-size: 1.6rem; margin-bottom: 0.5rem;">Address</h3>
                         <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-primary);">
                             235 McCormick Rd.<br>
                             Charlottesville, VA 22904
@@ -172,7 +172,7 @@ get_header(); ?>
                     </div>
 
                     <div style="margin-bottom: var(--spacing-md);">
-                        <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 0.5rem;">Email</h3>
+                        <h3 style="color: var(--accent-color); font-size: 1.6rem; margin-bottom: 0.5rem;">Email</h3>
                         <p style="font-size: 1.1rem;">
                             <a href="mailto:contact@virginiapolicyreview.org" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">
                                 contact@virginiapolicyreview.org
@@ -181,7 +181,7 @@ get_header(); ?>
                     </div>
 
                     <div>
-                        <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 0.5rem;">Social Media</h3>
+                        <h3 style="color: var(--accent-color); font-size: 1.6rem; margin-bottom: 0.5rem;">Social Media</h3>
                         <p style="font-size: 1.1rem;">
                             <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">
                                 Follow us on Instagram
@@ -198,7 +198,7 @@ get_header(); ?>
                         We welcome submissions of research articles, opinion pieces, and policy analysis from students and scholars.
                     </p>
 
-                    <h3 style="color: var(--accent-color); font-size: 1.2rem; margin-bottom: 0.5rem;">Current Theme</h3>
+                    <h3 style="color: var(--accent-color); font-size: 1.6rem; margin-bottom: 0.5rem;">Current Theme</h3>
                     <p style="font-size: 1.3rem; font-weight: 600; color: var(--primary-color); margin-bottom: var(--spacing-md);">
                         "Policy for the Public Good"<br>
                         <span style="font-size: 1rem; color: var(--text-secondary); font-weight: 400;">2025-26 Edition</span>
@@ -219,7 +219,7 @@ get_header(); ?>
         <div class="container">
             <div class="text-center" style="color: white;">
                 <h2 style="color: white; margin-bottom: var(--spacing-md); font-size: clamp(2rem, 5vw, 3rem);">Join Our Mission</h2>
-                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto var(--spacing-lg); color: rgba(255, 255, 255, 0.9);">
+                <p style="font-size: 1.6rem; max-width: 800px; margin: 0 auto var(--spacing-lg); color: rgba(255, 255, 255, 0.9);">
                     Virginia Policy Review is always looking for dedicated students interested in policy research, writing, editing, and podcast production.
                 </p>
                 <a href="mailto:contact@virginiapolicyreview.org"
