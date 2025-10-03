@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Build URL with filters
     function buildFilterUrl(category, searchTerm) {
-        let url = window.location.pathname;
+        let url = '<?php echo home_url('/the-third-rail'); ?>';
         const params = new URLSearchParams();
 
         if (category && category !== 'all') {
