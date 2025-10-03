@@ -528,7 +528,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const queryString = params.toString();
-        return queryString ? url + '?' + queryString : url;
+        const finalUrl = queryString ? url + '?' + queryString : url;
+        console.log('Redirecting to:', finalUrl); // Debug
+        return finalUrl;
     }
 
     // Category filter

@@ -383,4 +383,27 @@ function vpr_admin_styles() {
     </style>';
 }
 add_action('admin_head', 'vpr_admin_styles');
+
+/**
+ * Allow query vars on custom page templates
+ */
+function vpr_add_query_vars($vars) {
+    $vars[] = 's';      // search
+    $vars[] = 'cat';    // category
+    $vars[] = 'year';   // year filter
+    return $vars;
+}
+add_filter('query_vars', 'vpr_add_query_vars');
+
+/**
+ * Prevent 404 on pages with query strings
+ */
+function vpr_prevent_page_query_404() {
+    global $wp_query;
+    if ($wp_query->is_page() && !empty($_GET)) {
+        $wp_query->is_404 = false;
+        status_header(200);
+    }
+}
+add_action('template_redirect', 'vpr_prevent_page_query_404');
 ?>
