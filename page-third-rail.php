@@ -355,7 +355,7 @@ $years_query = $wpdb->get_col("
     <section class="page-banner">
         <div class="page-banner-content">
             <h1>
-                <span style="font-style: italic; color: var(--primary-color);">Virginia</span>
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.15em;">Virginia</span>
                 <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
             </h1>
             <nav class="page-nav">

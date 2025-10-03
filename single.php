@@ -40,6 +40,7 @@ get_header(); ?>
     font-weight: 800;
     margin-bottom: 0.3rem;
     line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .cornell-nav {
@@ -273,7 +274,7 @@ get_header(); ?>
     <section class="cornell-banner">
         <div class="cornell-banner-content">
             <h1>
-                <span style="font-style: italic; color: var(--primary-color);">Virginia</span>
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.15em;">Virginia</span>
                 <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
             </h1>
             <nav class="cornell-nav">
