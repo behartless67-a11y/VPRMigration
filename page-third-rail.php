@@ -372,33 +372,35 @@ $years_query = $wpdb->get_col("
     <!-- Filters -->
     <section class="filters-bar">
         <div class="filters-container">
-            <!-- Search Box -->
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    class="search-input"
-                    placeholder="Search articles..."
-                    value="<?php echo esc_attr($search_query); ?>"
-                >
-                <button id="searchButton" class="search-button">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
-                </button>
-                <?php if (!empty($search_query)) : ?>
-                    <button id="clearSearch" class="clear-search" title="Clear search">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
+            <form method="get" action="<?php echo esc_url(get_permalink()); ?>" style="display: contents;">
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input
+                        type="text"
+                        name="s"
+                        id="searchInput"
+                        class="search-input"
+                        placeholder="Search articles..."
+                        value="<?php echo esc_attr($search_query); ?>"
+                    >
+                    <button type="submit" class="search-button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
                         </svg>
                     </button>
-                <?php endif; ?>
-            </div>
+                    <?php if (!empty($search_query)) : ?>
+                        <a href="<?php echo esc_url(get_permalink()); ?>" class="clear-search" title="Clear search">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </a>
+                    <?php endif; ?>
+                </div>
 
-            <label for="categoryFilter" style="font-weight: 600;">Category:</label>
-            <select id="categoryFilter" class="filter-select">
+                <label for="categoryFilter" style="font-weight: 600;">Category:</label>
+                <select name="cat" id="categoryFilter" class="filter-select" onchange="this.form.submit()">
                 <option value="all">All Categories</option>
                 <?php
                 $categories = get_categories(array('hide_empty' => true));
@@ -421,6 +423,7 @@ $years_query = $wpdb->get_col("
                     Showing <?php echo $blog_query->post_count; ?> of <?php echo $blog_query->found_posts; ?> articles
                 <?php endif; ?>
             </span>
+            </form>
         </div>
     </section>
 
