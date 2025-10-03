@@ -676,7 +676,7 @@ get_header(); ?>
                     <!-- Slide 2 -->
                     <article class="featured-slide">
                         <div class="featured-slide-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/bashar-syria.jpg" alt="Syria Israel Relations">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/golan-heights-map.png" alt="Golan Heights Map - Syria Israel">
                         </div>
                         <div class="featured-slide-content">
                             <div class="featured-article-meta">
