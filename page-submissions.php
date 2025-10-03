@@ -83,8 +83,10 @@ get_header(); ?>
 }
 
 .page-banner h1 span {
-    -webkit-text-stroke: 1px var(--accent-color);
-    text-stroke: 1px var(--accent-color);
+    filter: drop-shadow(1px 0 0 var(--accent-color))
+            drop-shadow(-1px 0 0 var(--accent-color))
+            drop-shadow(0 1px 0 var(--accent-color))
+            drop-shadow(0 -1px 0 var(--accent-color));
 }
 
 .page-nav {
