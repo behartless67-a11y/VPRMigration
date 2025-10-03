@@ -658,7 +658,8 @@ get_header(); ?>
                     <!-- Slide 1 -->
                     <article class="featured-slide active">
                         <div class="featured-slide-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/sudan.jpg" alt="Sudan Famine Crisis">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/humanitarian-aid-unsplash.jpg" alt="Sudan Famine Crisis">
+                            <div class="image-attribution">Photo by Joel Muniz on Unsplash</div>
                         </div>
                         <div class="featured-slide-content">
                             <div class="featured-article-meta">
@@ -676,7 +677,8 @@ get_header(); ?>
                     <!-- Slide 2 -->
                     <article class="featured-slide">
                         <div class="featured-slide-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/golan-heights-map.png" alt="Golan Heights Map - Syria Israel">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/middle-east-desert-unsplash.jpg" alt="Middle East Desert Landscape">
+                            <div class="image-attribution">Photo by Sergey Pesterev on Unsplash</div>
                         </div>
                         <div class="featured-slide-content">
                             <div class="featured-article-meta">
@@ -694,7 +696,8 @@ get_header(); ?>
                     <!-- Slide 3 -->
                     <article class="featured-slide">
                         <div class="featured-slide-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/undersea-cable.jpg" alt="Undersea Cable Infrastructure">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/fiber-optic-unsplash.jpg" alt="Fiber Optic Cable Infrastructure">
+                            <div class="image-attribution">Photo by Compare Fibre on Unsplash</div>
                         </div>
                         <div class="featured-slide-content">
                             <div class="featured-article-meta">
