@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Build URL with filters
     function buildFilterUrl(category, searchTerm) {
-        let url = '<?php echo home_url('/the-third-rail'); ?>';
+        let url = '<?php echo get_permalink(); ?>';
         const params = new URLSearchParams();
 
         if (category && category !== 'all') {
