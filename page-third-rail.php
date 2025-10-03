@@ -9,7 +9,7 @@ get_header();
 // Get filters from URL parameters
 $selected_year = isset($_GET['year']) ? $_GET['year'] : 'all';
 $selected_category = isset($_GET['cat']) ? $_GET['cat'] : 'all';
-$search_query = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
+$search_query = isset($_GET['search']) ? sanitize_text_field($_GET['search']) : '';
 
 // Build query args
 $query_args = array(
@@ -32,7 +32,7 @@ if ($selected_category !== 'all') {
 
 // Search query
 if (!empty($search_query)) {
-    $query_args['s'] = $search_query;
+    $query_args['s'] = $search_query; // Use 's' for WP_Query (WordPress standard)
 }
 
 $blog_query = new WP_Query($query_args);
@@ -372,12 +372,12 @@ $years_query = $wpdb->get_col("
     <!-- Filters -->
     <section class="filters-bar">
         <div class="filters-container">
-            <form method="get" action="<?php echo esc_url(get_permalink()); ?>" style="display: contents;">
+            <form method="get" action="<?php echo esc_url(home_url('/the-third-rail/')); ?>" style="display: contents;">
                 <!-- Search Box -->
                 <div class="search-box">
                     <input
                         type="text"
-                        name="s"
+                        name="search"
                         id="searchInput"
                         class="search-input"
                         placeholder="Search articles..."

@@ -388,7 +388,7 @@ add_action('admin_head', 'vpr_admin_styles');
  * Allow query vars on custom page templates
  */
 function vpr_add_query_vars($vars) {
-    $vars[] = 's';      // search
+    $vars[] = 'search'; // search
     $vars[] = 'cat';    // category
     $vars[] = 'year';   // year filter
     return $vars;
@@ -396,14 +396,32 @@ function vpr_add_query_vars($vars) {
 add_filter('query_vars', 'vpr_add_query_vars');
 
 /**
- * Prevent 404 on pages with query strings
+ * Prevent 404 on The Third Rail page with query strings
  */
-function vpr_prevent_page_query_404() {
+function vpr_fix_third_rail_404($query) {
+    // Only affect main query on frontend
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+
+    // If this is a page query with search or filter params
+    if ($query->is_page() && (isset($_GET['search']) || isset($_GET['cat']) || isset($_GET['year']))) {
+        $query->set('post_type', 'page');
+        $query->is_404 = false;
+    }
+}
+add_action('pre_get_posts', 'vpr_fix_third_rail_404');
+
+/**
+ * Force status 200 on pages with query vars
+ */
+function vpr_status_200_on_page_search() {
     global $wp_query;
-    if ($wp_query->is_page() && !empty($_GET)) {
+
+    if (is_page() && (isset($_GET['search']) || isset($_GET['cat']) || isset($_GET['year']))) {
         $wp_query->is_404 = false;
         status_header(200);
     }
 }
-add_action('template_redirect', 'vpr_prevent_page_query_404');
+add_action('wp', 'vpr_status_200_on_page_search', 999);
 ?>
