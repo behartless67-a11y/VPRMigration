@@ -510,70 +510,19 @@ $years_query = $wpdb->get_col("
 </main>
 
 <script>
-// Search and Filter functionality
+// Keyboard shortcut for search
 document.addEventListener('DOMContentLoaded', function() {
-    const categoryFilter = document.getElementById('categoryFilter');
     const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
-    const clearSearch = document.getElementById('clearSearch');
-
-    // Build URL with filters
-    function buildFilterUrl(category, searchTerm) {
-        let url = '<?php echo get_permalink(); ?>';
-        const params = new URLSearchParams();
-
-        if (category && category !== 'all') {
-            params.append('cat', category);
-        }
-
-        if (searchTerm && searchTerm.trim() !== '') {
-            params.append('s', searchTerm.trim());
-        }
-
-        const queryString = params.toString();
-        const finalUrl = queryString ? url + '?' + queryString : url;
-        console.log('Redirecting to:', finalUrl); // Debug
-        return finalUrl;
-    }
-
-    // Category filter
-    categoryFilter.addEventListener('change', function() {
-        const category = this.value;
-        const searchTerm = searchInput.value;
-        window.location.href = buildFilterUrl(category, searchTerm);
-    });
-
-    // Search on button click
-    searchButton.addEventListener('click', function() {
-        const searchTerm = searchInput.value;
-        const category = categoryFilter.value;
-        window.location.href = buildFilterUrl(category, searchTerm);
-    });
-
-    // Search on Enter key
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            const searchTerm = this.value;
-            const category = categoryFilter.value;
-            window.location.href = buildFilterUrl(category, searchTerm);
-        }
-    });
-
-    // Clear search
-    if (clearSearch) {
-        clearSearch.addEventListener('click', function() {
-            const category = categoryFilter.value;
-            window.location.href = buildFilterUrl(category, '');
-        });
-    }
 
     // Focus search input on Ctrl/Cmd + K
-    document.addEventListener('keydown', function(e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-            e.preventDefault();
-            searchInput.focus();
-        }
-    });
+    if (searchInput) {
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+    }
 });
 </script>
 
