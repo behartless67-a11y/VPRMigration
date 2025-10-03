@@ -42,6 +42,7 @@ get_header(); ?>
     font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .cornell-nav {

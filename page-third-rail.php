@@ -81,6 +81,7 @@ $years_query = $wpdb->get_col("
     font-weight: 800;
     margin-bottom: 0.3rem;
     line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .page-nav {
