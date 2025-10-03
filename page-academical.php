@@ -83,6 +83,11 @@ get_header(); ?>
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
+.page-banner h1 span {
+    -webkit-text-stroke: 2px var(--accent-color);
+    text-stroke: 2px var(--accent-color);
+}
+
 .page-nav {
     display: flex;
     justify-content: center;
