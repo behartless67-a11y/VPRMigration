@@ -155,7 +155,7 @@ get_header(); ?>
         <div class="page-banner-content">
             <h1>
                 <span style="font-style: italic; color: var(--primary-color); font-size: 1.15em;">Virginia</span>
-                <span style="font-weight: 800; color: var(--accent-color);"> Policy Review</span>
+                <span style="font-weight: 800; color: var(--primary-color);"> Policy Review</span>
             </h1>
             <nav class="page-nav">
                 <a href="<?php echo home_url('/'); ?>">Home</a>
