@@ -362,6 +362,7 @@ $years_query = $wpdb->get_col("
                 <a href="<?php echo home_url('/'); ?>">Home</a>
                 <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
                 <a href="<?php echo home_url('/the-third-rail'); ?>" class="active">The Third Rail</a>
+                <a href="<?php echo home_url('/journal-issues'); ?>">Journal Issues</a>
                 <a href="<?php echo home_url('/academical'); ?>">Academical</a>
                 <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
             </nav>
