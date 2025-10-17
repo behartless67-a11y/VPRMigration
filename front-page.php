@@ -45,13 +45,6 @@ get_header(); ?>
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.cornell-banner h1 span {
-    filter: drop-shadow(1px 0 0 var(--accent-color))
-            drop-shadow(-1px 0 0 var(--accent-color))
-            drop-shadow(0 1px 0 var(--accent-color))
-            drop-shadow(0 -1px 0 var(--accent-color));
-}
-
 .cornell-nav {
     display: flex;
     justify-content: center;
