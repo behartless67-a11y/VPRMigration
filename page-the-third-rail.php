@@ -5,14 +5,81 @@
 
 get_header(); ?>
 
+<style>
+.page-banner {
+    background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('<?php echo get_template_directory_uri(); ?>/images/lawn.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-bottom: 3px solid var(--accent-color);
+    padding: 2rem 0 1.5rem;
+}
+
+.page-banner-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-family: var(--font-secondary);
+    font-size: 8rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.page-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.page-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.page-nav a:hover,
+.page-nav a.active {
+    background: var(--accent-color);
+    color: var(--white);
+}
+
+.page-banner p {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0;
+}
+</style>
+
 <main class="main-content">
-    <!-- Compact Header -->
-    <section style="padding: var(--spacing-lg) 0; background: var(--white);">
-        <div class="container">
-            <div class="text-center">
-                <h1 style="font-size: 2.5rem; margin-bottom: var(--spacing-sm); font-family: var(--font-secondary);">The Third Rail</h1>
-                <p style="font-size: 1.1rem; color: var(--text-secondary); margin: 0;">Shorter takes on big issues</p>
-            </div>
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="page-banner-content">
+            <h1>
+                <span style="font-style: italic; color: var(--primary-color); font-size: 1.15em;">Virginia</span>
+                <span style="font-weight: 800; color: var(--primary-color);"> Policy Review</span>
+            </h1>
+            <nav class="page-nav">
+                <a href="<?php echo home_url('/'); ?>">Home</a>
+                <a href="<?php echo home_url('/about-us'); ?>">About Us</a>
+                <a href="<?php echo home_url('/the-third-rail'); ?>" class="active">The Third Rail</a>
+                <a href="<?php echo home_url('/academical'); ?>">Academical</a>
+                <a href="<?php echo home_url('/submissions'); ?>">Submissions</a>
+            </nav>
+            <p>Shorter takes on big issues - timely policy analysis and commentary</p>
         </div>
     </section>
 
