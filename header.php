@@ -94,7 +94,8 @@ function vpr_fallback_menu() {
     echo '<li><a href="' . home_url('/about-us') . '">About Us</a></li>';
     echo '<li><a href="' . home_url('/the-third-rail') . '">The Third Rail</a></li>';
     echo '<li><a href="' . home_url('/academical') . '">Academical</a></li>';
-    echo '<li><a href="' . home_url('/journal-issues') . '">Journal Issues</a></li>';
+    echo '<li><a href="' . home_url('/journal-issues') . '">Journal Entries</a></li>';
+    echo '<li><a href="' . home_url('/submissions') . '">Submissions</a></li>';
     echo '</ul>';
 }
 ?>

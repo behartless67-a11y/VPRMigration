@@ -33,7 +33,7 @@
                             <li><a href="<?php echo home_url('/about-us'); ?>" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: var(--transition);">About Us</a></li>
                             <li><a href="<?php echo home_url('/the-third-rail'); ?>" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: var(--transition);">The Third Rail</a></li>
                             <li><a href="<?php echo home_url('/academical'); ?>" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: var(--transition);">Academical Podcast</a></li>
-                            <li><a href="<?php echo home_url('/journal-issues'); ?>" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: var(--transition);">Journal Issues</a></li>
+                            <li><a href="<?php echo home_url('/journal-issues'); ?>" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: var(--transition);">Journal Entries</a></li>
                         </ul>
                     </nav>
                 </div>
